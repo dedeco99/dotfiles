@@ -182,13 +182,13 @@ for_window [class="firefox"] move window to workspace $ws4
 
 for_window [title="Spotify"] move window to workspace $ws1
 for_window [title="Spotify"] move up
-for_window [title="Spotify"] resize set 10px 1300 px
+for_window [class="kitty"] resize set height 600 px
 for_window [class="kitty"] move window to workspace $ws1
 
 for_window [class="Rambox"] move window to workspace $ws2
 for_window [class="Rambox"] move up
 for_window [class="qBittorrent"] move window to workspace $ws2
-for_window [class="qBittorrent"] resize set height 512 px
+for_window [class="qBittorrent"] resize set height 500 px
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
