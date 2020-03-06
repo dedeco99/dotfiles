@@ -176,6 +176,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 exec "xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --rotate left --output HDMI-0 --right-of DP-0 --output DVI-D-0 --left-of DP-0"
 bindsym $mod+Shift+m exec "xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --rotate left --output HDMI-0 --right-of DP-0 --output DVI-D-0 --left-of DP-0"
 
+exec setxkbmap -layout us
+
 # Assign Windows
 for_window [title="Downloads"] move window to workspace $ws3
 for_window [class="firefox"] move window to workspace $ws4
