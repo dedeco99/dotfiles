@@ -65,7 +65,7 @@ exec rambox
 exec qbittorrent
 
 # Keybinds - Start Applications
-bindsym $mod+d exec dmenu_recency
+bindsym $mod+d exec ulauncher
 bindsym $super+1 exec firefox
 bindsym $super+2 exec pcmanfm
 bindsym $super+3 exec kitty
