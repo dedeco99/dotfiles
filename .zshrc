@@ -29,9 +29,10 @@ alias zshconfig="nano ~/.zshrc"
 alias kittyconfig="nano ~/.config/kitty/kitty.conf"
 alias i3config="nano ~/.i3/config"
 
-alias update="sudo pacman -Syu"
-alias install="sudo pacman -Syu"
-alias search="pacman -Ss"
+alias update="pamac checkupdates -a"
+alias upgrade="pamac upgrade -a"
+alias install="pamac install"
+alias search="pamac search"
 
 alias rodrigo="ssh pi@rodrigobot.ddns.net"
 
