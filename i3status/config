@@ -11,15 +11,19 @@ general {
 }
 
 order += "cpu_usage"
+order += "cpu_temperature 0"
 order += "memory"
 order += "disk /"
 order += "disk /media/BigBoyMovies"
 order += "disk /media/BigBoySeries"
-order += "disk /media/SmallBoy"
 order += "tztime local"
 
 cpu_usage {
         format = " CPU  %usage "
+}
+
+cpu_temperature 0 {
+        format = " %degrees °C "
 }
 
 disk "/" {
@@ -32,10 +36,6 @@ disk "/media/BigBoyMovies" {
 
 disk "/media/BigBoySeries" {
         format = " Series %percentage_used "
-}
-
-disk "/media/SmallBoy" {
-        format = " Extra %percentage_used "
 }
 
 memory {
