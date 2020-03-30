@@ -34,7 +34,15 @@ alias upgrade="pamac upgrade -a"
 alias install="pamac install"
 alias search="pamac search"
 
+entertainmentHubSSH(){
+    eval `ssh-agent -s`
+    ssh-add ~/.ssh/entertainmenthub
+    ssh 34.91.118.153
+}
+
 alias rodrigo="ssh pi@rodrigobot.ddns.net"
+alias entertainmenthub="entertainmentHubSSH"
+alias minematerials="ssh 34.91.118.179"
 
 alias programming="cd ~/Documents/Programming/Web/node"
 
@@ -42,12 +50,6 @@ alias updatecoins="cd ~/Documents/Programming/Python/coinmarketcap && python coi
 alias updateinsta="cd ~/Documents/Programming/Python/Instaloader && sh instaloader.sh"
 
 alias timer="termdown -b --no-figlet"
-
-# Work aliases
-alias sls="sls --aws-profile Shop2Grow"
-
-alias projects="cd ~/Documents/Projects"
-alias shop="cd ~/Documents/Projects/shop2grow_api/services"
 
 # Rebind
 #bindkey '^I' autosuggest-accept
