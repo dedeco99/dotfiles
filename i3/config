@@ -241,11 +241,15 @@ bar {
 
   client.background       #2B2C2B
 
+# Remove window title
+for_window [class=".*"] border pixel 0
+# for_window [class=".*"] border normal 0
+
 # Settings for i3-gaps
 
 # Set inner/outer gaps
 gaps inner 5
-gaps outer -2
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
