@@ -37,12 +37,11 @@ alias search="pamac search"
 entertainmentHubSSH(){
     eval `ssh-agent -s`
     ssh-add ~/.ssh/entertainmenthub
-    ssh 34.91.118.153
+    ssh $1
 }
 
 alias rodrigo="ssh pi@rodrigobot.ddns.net"
-alias entertainmenthub="entertainmentHubSSH"
-alias minematerials="ssh 34.91.118.179"
+alias entertainmenthub="entertainmentHubSSH 34.91.118.153"
 
 alias programming="cd ~/Documents/Programming/Web/node"
 
