@@ -12,15 +12,15 @@ antigen bundle zsh-users/zsh-autosuggestions
 #antigen theme agnoster
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
+# POWERLEVEL9K_MODE="nerdfont-complete"
+# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0BC'
+# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0BA'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
 # Tell Antigen that you're done.
 antigen apply
-
-POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0BC'
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0BA'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs ssh date time)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Aliases
 alias ssh="kitty +kitten ssh"
