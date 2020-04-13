@@ -1,0 +1,108 @@
+/*** Connect to wifi if necessary ***/
+wifi-menu
+
+/*** Create partitions ***/
+fdisk -l
+fdisk /dev/sda
+// 4 partitions: boot (200M), swap (150% RAM), root (30G), home
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda4
+mkswap /dev/sda2
+swapon /dev/sda2
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+mkdir /mnt/home
+mount /dev/sda4 /mnt/home
+
+/*** Install base packages ***/
+pacstrap /mnt base base-devel linux linux-firmware nano
+
+/*** Setup system ***/
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+
+/*** Setup network manager ***/
+pacman -S networkmanager
+systemctl enable NetworkManager
+
+/*** Setup grub ***/
+pacman -S grub
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+/*** Set locale ***/
+nano /etc/locale.gen
+// uncomment es_US lines (and other languages you want)
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
+
+/*** Setup host ***/
+echo dedeco99-PC > /etc/hostname
+passwd
+
+/*** Reboot ***/
+exit
+umount -R /mnt
+reboot
+
+/*** Setup wifi if necessary ***/
+nmtui
+
+/*** Setup user ***/
+useradd -m -g wheel dedeco99
+passwd dedeco99
+sudo nano /etc/sudoers
+// uncomment %wheel ALL=(All) ALL
+
+/*** Setup graphical interface ***/
+sudo pacman -S xorg-server xorg-xinit
+
+/*** Setup window manager ***/
+sudo pacman -S bspwm sxhkd
+
+/*** Setup display manager ***/
+sudo pacman -S lightdm lightdm-gtk-greeter
+sudo systemctl enable lightdm
+
+/*** Setup terminal ***/
+sudo pacman -S zsh kitty
+
+/*** Change default shell ***/
+chsh -s /usr/bin/zsh
+
+/*** Setup system applets ***/
+sudo pacman -S network-manager-applet
+
+/*** Setup fonts ***/
+sudo pacman -S adobe-source-code-pro-fonts noto-fonts
+
+/*** Install my packages ***/
+sudo pacman -S git pkgfile xrandr
+
+sudo pkgfile -u
+
+/*** Install yay ***/
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+/*** Install my packages ***/
+yay -S libnotify dunst albert flameshot i3lock
+yay -S firefox pcmanfm code qbittorrent handbrake
+
+/*** Setup git ***/
+git config --global credential.helper store
+git pull
+
+/*** Setup Theme ***/
+yay -S arc-solid-gtk-theme xcursor-breeze papirus-icon-theme
+
+/*** Setup polybar ***/
+yay -S polybar
+
+/*** Setup my configs ***/
+git clone https://github.com/dedeco99/dotfiles
+sh link.sh {i3, bspwm}
