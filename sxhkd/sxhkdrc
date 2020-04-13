@@ -5,6 +5,18 @@
 super + {1, 3}
 	{firefox, kitty}
 
+# lock screen
+super + l
+	i3lock -c 000000
+
+# screenshot
+Print
+	flameshot gui
+
+# Switch keyboard layouts
+super + {u, p}
+	setxkbmap -layout {us, pt}
+
 #
 # bspwm hotkeys
 #
