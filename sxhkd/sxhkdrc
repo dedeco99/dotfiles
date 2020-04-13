@@ -25,9 +25,13 @@ alt + {t, f, m}
 alt + {Up, Down, Left, Down}
 	bspc node -f {north, south, west, east}
 
-# focus or send to the given workspace
-alt + {_, shift} + {1-9}
-	bspc {desktop -f,node -d} '^{1-9}'
+# focus on the given workspace
+alt + {1-9}
+	bspc desktop -f ^{1-9}
+
+# send to the given workspace
+alt + shift + {1-9}
+	id=$(bspc query -N -n); bspc node -d ^{1-9}; bspc node -f ${id}
 
 # move/resize
 

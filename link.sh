@@ -14,6 +14,8 @@ function parseArgs() {
 	cp ./zsh/zshrc ~/.zshrc
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
+	cp ./polybar/config ~/.config/polybar/config
+	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 }
 
 parseArgs "$@"
