@@ -14,6 +14,7 @@ function parseArgs() {
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
 }
 
 parseArgs "$@"
