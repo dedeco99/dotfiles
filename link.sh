@@ -13,6 +13,8 @@ function parseArgs() {
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+	cp ./gtk/gtkrc-2.0 ~/.gtkrc-2.0
+	cp ./gtk/gtkrc-3.0 ~/.config/gtk-3.0/settings.ini
 	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
 	cp ./polybar/config ~/.config/polybar/config
 	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
