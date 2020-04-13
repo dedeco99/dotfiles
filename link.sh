@@ -7,6 +7,8 @@ function parseArgs() {
 		cp ./xorg/xinitrc ~/.xinitrc
 		cp ./bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 		cp ./sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
+		cp ./polybar/config ~/.config/polybar/config
+		cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 	fi
 
 	cp ./profile ~/.profile
@@ -16,8 +18,6 @@ function parseArgs() {
 	cp ./gtk/gtkrc-2.0 ~/.gtkrc-2.0
 	cp ./gtk/gtkrc-3.0 ~/.config/gtk-3.0/settings.ini
 	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
-	cp ./polybar/config ~/.config/polybar/config
-	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 }
 
 parseArgs "$@"

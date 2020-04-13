@@ -1,10 +1,9 @@
 source ~/antigen.zsh
 
 # Plugins
-# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Syntax highlighting bundle.
+# Bundle plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle command-not-found
@@ -24,16 +23,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 antigen apply
 
 # Aliases
-alias ssh="kitty +kitten ssh"
-
-alias zshconfig="nano ~/.zshrc"
-alias kittyconfig="nano ~/.config/kitty/kitty.conf"
-alias i3config="nano ~/.i3/config"
-
-alias update="pamac checkupdates -a"
-alias upgrade="pamac upgrade -a"
-alias install="pamac install"
-alias search="pamac search"
+alias update="yay -Syu"
+alias install="yay -S"
+alias search="yay -Ss"
 
 entertainmentHubSSH(){
     eval `ssh-agent -s`
@@ -50,9 +42,3 @@ alias updatecoins="cd ~/Documents/Programming/Python/coinmarketcap && python coi
 alias updateinsta="cd ~/Documents/Programming/Python/Instaloader && sh instaloader.sh"
 
 alias timer="termdown -b --no-figlet"
-
-# Rebind
-#bindkey '^I' autosuggest-accept
-#bindkey '^[OC' expand-or-complete
-
-export EDITOR="nano"
