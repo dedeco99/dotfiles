@@ -26,6 +26,7 @@ antigen apply
 alias update="yay -Syu"
 alias install="yay -S"
 alias search="yay -Ss"
+alias clean="yay -Yc"
 
 entertainmentHubSSH(){
     eval `ssh-agent -s`
