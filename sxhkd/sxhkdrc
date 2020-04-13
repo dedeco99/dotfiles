@@ -32,5 +32,5 @@ alt + {_, shift} + {1-9}
 # move/resize
 
 # expand a window by moving one of its side outward
-alt + 0 ; {r, s}
-	{reboot, shutdown now}
+alt + 0 ; {h, s, r, shift + s}
+	{systemctl hibernate, systemctl suspend, reboot, shutdown now}

@@ -10,7 +10,6 @@ function parseArgs() {
 	fi
 
 	cp ./profile ~/.profile
-	cp ./xorg/xprofile ~/.xprofile
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
