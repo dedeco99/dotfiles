@@ -18,7 +18,7 @@ alt + shift + q
 	bspc node -k
 
 # set the window state
-alt + {t, space, f}
+alt + {t, f, m}
 	bspc node -t {tiled, floating, fullscreen}
 
 # focus the node in the given direction
@@ -33,4 +33,4 @@ alt + {_, shift} + {1-9}
 
 # expand a window by moving one of its side outward
 alt + 0 ; {r, s}
-	{reboot, shutdown}
+	{reboot, shutdown now}
