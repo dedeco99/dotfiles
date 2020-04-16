@@ -30,7 +30,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec_always --no-startup-id fix_xcursor
-#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Auto Start - Applications
 exec firefox
@@ -59,8 +59,8 @@ for_window [title=".*TickTick.*"] move up
 for_window [class="kitty"] resize set height 600 px
 for_window [class="kitty"] move window to workspace $ws1
 
-for_window [class="qBittorrent"] move window to workspace $ws2
-for_window [class="qBittorrent"] resize set height 500 px
+for_window [title="Deluge"] move window to workspace $ws2
+for_window [title="Deluge"] resize set height 500 px
 
 # Keybinds - Start Applications
 bindsym $super+1 exec firefox
