@@ -25,6 +25,7 @@ antigen apply
 # Aliases
 alias update="yay -Syu"
 alias install="yay -S"
+alias uninstall="yay -Rsn"
 alias search="yay -Ss"
 alias clean="yay -Yc"
 
