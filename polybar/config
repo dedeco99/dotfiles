@@ -134,7 +134,7 @@ label-unmounted-foreground = ${colors.alert}
 [module/movies]
 type = internal/fs
 interval = 25
-mount-0 = /media/BigBoyMovies
+mount-0 = /mnt/BigBoyMovies
 label-mounted = Movies %percentage_used%%
 label-unmounted = Movies unmounted
 label-unmounted-foreground = ${colors.alert}
@@ -142,7 +142,7 @@ label-unmounted-foreground = ${colors.alert}
 [module/series]
 type = internal/fs
 interval = 25
-mount-0 = /media/BigBoySeries
+mount-0 = /mnt/BigBoySeries
 label-mounted = Series %percentage_used%%
 label-unmounted = Series unmounted
 label-unmounted-foreground = ${colors.alert}
