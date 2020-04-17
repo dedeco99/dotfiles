@@ -23,11 +23,11 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 antigen apply
 
 # Aliases
-alias update="yay -Syu"
-alias install="yay -S"
-alias uninstall="yay -Rsn"
-alias search="yay -Ss"
-alias clean="yay -Yc"
+alias update="pamac update -a --devel --force-refresh"
+alias install="pamac install"
+alias uninstall="pamac remove"
+alias search="pamac search"
+alias clean="pamac clean"
 
 entertainmentHubSSH(){
     eval `ssh-agent -s`

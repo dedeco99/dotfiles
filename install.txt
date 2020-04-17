@@ -78,30 +78,32 @@ git clone https://github.com/dedeco99/dotfiles
 sh link.sh {i3, bspwm}
 
 /*** Install my packages ***/
-sudo pacman -S git pkgfile xorg-xrandr
+install git pkgfile xorg-xrandr
 
 sudo pkgfile -u
 
-/*** Install yay ***/
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+/*** Install pamac ***/
+install pamac-cli
 
 /*** Install my packages ***/
-yay -S libnotify dunst albert flameshot i3lock
-yay -S firefox pcmanfm code deluge-gtk handbrake
+install ncdu nodejs npm p7zip pavucontrol termdown vlc
+install libnotify dunst albert flameshot i3lock
+install firefox pcmanfm code discord deluge-gtk handbrake
+
+/*** Install AUR packages ***/
+install dropbox freefilesync multimc-git plex-media-server robo3t-bin python-subsync
 
 /*** Setup Theme ***/
-yay -S adapta-gtk-theme xcursor-breeze papirus-icon-theme
+install adapta-gtk-theme xcursor-breeze papirus-icon-theme
 
 /*** Setup polybar ***/
-yay -S polybar
+install polybar
 
 /*** Setup system applets ***/
-yay -S network-manager-applet
+install network-manager-applet
 
 /*** Setup fonts ***/
-yay -S nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
+install nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
 
 /*** Setup git ***/
 git config --global credential.helper store
