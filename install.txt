@@ -81,7 +81,7 @@ sh link.sh {i3, bspwm}
 sudo pacman -S network-manager-applet
 
 /*** Setup fonts ***/
-sudo pacman -S adobe-source-code-pro-fonts noto-fonts
+sudo pacman -S nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
 
 /*** Install my packages ***/
 sudo pacman -S git pkgfile xorg-xrandr
@@ -95,14 +95,14 @@ makepkg -si
 
 /*** Install my packages ***/
 yay -S libnotify dunst albert flameshot i3lock
-yay -S firefox pcmanfm code qbittorrent handbrake
+yay -S firefox pcmanfm code deluge-gtk handbrake
 
 /*** Setup git ***/
 git config --global credential.helper store
 git pull
 
 /*** Setup Theme ***/
-yay -S arc-solid-gtk-theme xcursor-breeze papirus-icon-theme
+yay -S adapta-gtk-theme xcursor-breeze papirus-icon-theme
 
 /*** Setup polybar ***/
 yay -S polybar
