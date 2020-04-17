@@ -77,12 +77,6 @@ chsh -s /usr/bin/zsh
 git clone https://github.com/dedeco99/dotfiles
 sh link.sh {i3, bspwm}
 
-/*** Setup system applets ***/
-sudo pacman -S network-manager-applet
-
-/*** Setup fonts ***/
-sudo pacman -S nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
-
 /*** Install my packages ***/
 sudo pacman -S git pkgfile xorg-xrandr
 
@@ -97,12 +91,18 @@ makepkg -si
 yay -S libnotify dunst albert flameshot i3lock
 yay -S firefox pcmanfm code deluge-gtk handbrake
 
-/*** Setup git ***/
-git config --global credential.helper store
-git pull
-
 /*** Setup Theme ***/
 yay -S adapta-gtk-theme xcursor-breeze papirus-icon-theme
 
 /*** Setup polybar ***/
 yay -S polybar
+
+/*** Setup system applets ***/
+yay -S network-manager-applet
+
+/*** Setup fonts ***/
+yay -S nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
+
+/*** Setup git ***/
+git config --global credential.helper store
+git pull
