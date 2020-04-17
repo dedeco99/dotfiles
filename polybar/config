@@ -8,7 +8,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-3}
 width = 100%
 height = 30
 bottom = true
@@ -18,7 +18,7 @@ border-size = 0
 border-color = #000000
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;2"
+font-0 = "Sauce Code Pro Nerd Font:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:size=16;4"
 font-2 = "Icons:size=14;4"
 modules-left = bspwm i3
@@ -26,7 +26,7 @@ modules-right = updates cpu temperature memory system movies series wlan eth xke
 tray-position = right
 
 [bar/left]
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:DVI-D-1}
 width = 100%
 height = 30
 bottom = true
@@ -37,7 +37,7 @@ border-color = #000000
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;2"
+font-0 = "Sauce Code Pro Nerd Font:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:size=16;4"
 modules-left = bspwm i3
 modules-right = date

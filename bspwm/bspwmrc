@@ -5,8 +5,8 @@ albert &
 nm-applet &
 sh $HOME/.config/polybar/launch.sh
 
-bspc monitor DVI-D-0 -d 1 2
-bspc monitor DP-0 -d 3 4 5 6 7 8 9
+bspc monitor DVI-D-1 -d 1 2
+bspc monitor DP-3 -d 3 4 5 6 7 8 9
 
 bspc config border_width 1
 bspc config window_gap 5

@@ -77,9 +77,15 @@ chsh -s /usr/bin/zsh
 git clone https://github.com/dedeco99/dotfiles
 sh link.sh {i3, bspwm}
 
-/*** Install my packages ***/
-install git pkgfile xorg-xrandr
+/*** Install yay ***/
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
+/*** Install my packages ***/
+install git pkgfile xorg-xrandr nvidia
+
+sudo nvidia-xconfig
 sudo pkgfile -u
 
 /*** Install pamac ***/
