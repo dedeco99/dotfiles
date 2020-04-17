@@ -88,11 +88,8 @@ install git pkgfile xorg-xrandr nvidia lib32-nvidia-libgl
 sudo nvidia-xconfig
 sudo pkgfile -u
 
-/*** Install pamac ***/
-install pamac-cli
-
 /*** Install my packages ***/
-install ncdu nodejs npm p7zip pavucontrol termdown vlc
+install ncdu nodejs npm p7zip pulseaudio pavucontrol termdown vlc
 install libnotify dunst albert flameshot i3lock
 install firefox pcmanfm code discord deluge-gtk handbrake steam
 
@@ -109,7 +106,7 @@ install polybar
 install network-manager-applet
 
 /*** Setup fonts ***/
-install nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts
+install nerd-fonts-source-code-pro nerd-fonts-iosevka noto-fonts noto-fonts-emoji
 
 /*** Setup git ***/
 git config --global credential.helper store
