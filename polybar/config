@@ -8,7 +8,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-monitor = ${env:MONITOR:DP-3}
+monitor = ${env:MONITOR:DP-0}
 width = 100%
 height = 30
 bottom = true
@@ -26,7 +26,7 @@ modules-right = updates cpu temperature memory system movies series wlan eth xke
 tray-position = right
 
 [bar/left]
-monitor = ${env:MONITOR:DVI-D-1}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 30
 bottom = true
