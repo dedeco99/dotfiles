@@ -5,17 +5,23 @@ function parseArgs() {
 		chmod +x ~/.config/i3status/net-speed.sh
 	elif [ "$1" == "bspwm" ]; then
 		cp ./xorg/xinitrc ~/.xinitrc
+		mkdir ~/.config/bspwm
 		cp ./bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+		mkdir ~/.config/sxhkd
 		cp ./sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 	fi
 
 	cp ./profile ~/.profile
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
+	mkdir ~/.config/kitty
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+	mkdir ~/.config/dunst
 	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
+	mkdir ~/.config/gtk-3.0
 	cp ./gtk/gtkrc-2.0 ~/.gtkrc-2.0
 	cp ./gtk/gtkrc-3.0 ~/.config/gtk-3.0/settings.ini
+	mkdir ~/.config/polybar
 	cp ./polybar/config ~/.config/polybar/config
 	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 	cp ./polybar/updates.sh ~/.config/polybar/updates.sh

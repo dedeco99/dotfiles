@@ -68,10 +68,14 @@ sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 
 /*** Setup terminal ***/
-sudo pacman -S zsh kitty
+sudo pacman -S git zsh kitty
 
 /*** Change default shell ***/
 chsh -s /usr/bin/zsh
+
+/*** Setup my configs ***/
+git clone https://github.com/dedeco99/dotfiles
+sh link.sh {i3, bspwm}
 
 /*** Setup system applets ***/
 sudo pacman -S network-manager-applet
@@ -80,7 +84,7 @@ sudo pacman -S network-manager-applet
 sudo pacman -S adobe-source-code-pro-fonts noto-fonts
 
 /*** Install my packages ***/
-sudo pacman -S git pkgfile xrandr
+sudo pacman -S git pkgfile xorg-xrandr
 
 sudo pkgfile -u
 
@@ -102,7 +106,3 @@ yay -S arc-solid-gtk-theme xcursor-breeze papirus-icon-theme
 
 /*** Setup polybar ***/
 yay -S polybar
-
-/*** Setup my configs ***/
-git clone https://github.com/dedeco99/dotfiles
-sh link.sh {i3, bspwm}
