@@ -14,7 +14,7 @@ Print
 	flameshot gui
 
 # Switch keyboard layouts
-super + {u, p}
+alt + {u, p}
 	setxkbmap -layout {us, pt}
 
 #
@@ -27,7 +27,7 @@ alt + shift + r
 
 # close and kill
 alt + shift + q
-	bspc node -k
+	bspc node -c
 
 # set the window state
 alt + {t, f, m}
@@ -43,7 +43,7 @@ alt + {1-9}
 
 # send to the given workspace
 alt + shift + {1-9}
-	id=$(bspc query -N -n); bspc node -d ^{1-9}; bspc node -f ${id}
+	bspc node -d ^{1-9} --follow
 
 # move/resize
 
