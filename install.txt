@@ -89,8 +89,8 @@ sudo nvidia-xconfig
 sudo pkgfile -u
 
 /*** Install my packages ***/
-install ncdu nodejs npm p7zip pulseaudio pavucontrol termdown vlc
-install libnotify dunst albert flameshot i3lock
+install ncdu nodejs npm p7zip pulseaudio pavucontrol udisks2 udiskie
+install libnotify dunst albert flameshot i3lock termdown vlc
 install firefox pcmanfm code discord deluge-gtk handbrake steam
 
 /*** Install AUR packages ***/

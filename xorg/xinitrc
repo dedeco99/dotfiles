@@ -34,5 +34,7 @@ fi
 
 xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --rotate left --output HDMI-0 --right-of DP-0 --output DVI-D-0 --left-of DP-0
 
+pulseaudio &
 dunst &
+udiskie &
 exec bspwm

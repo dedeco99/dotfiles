@@ -1,4 +1,5 @@
 function parseArgs() {
+	[ ! -d ~/.config ] && mkdir ~/.config
 	if [ "$1" == "i3" ]; then
 		cp ./i3/config ~/.i3/config
 		cp -r ./i3status/* ~/.config/i3status/
@@ -8,11 +9,10 @@ function parseArgs() {
 		cp ./bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 		[ ! -d ~/.config/sxhkd ] && mkdir ~/.config/sxhkd
 		cp ./sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
-	elif [ "$1" == "xorg" ]; then
-		cp ./xorg/xinitrc ~/.xinitrc
-		cp ./xorg/Xresources ~/.Xresources
 	fi
 
+	cp ./xorg/xinitrc ~/.xinitrc
+	cp ./xorg/Xresources ~/.Xresources
 	cp ./profile ~/.profile
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
