@@ -18,9 +18,9 @@ border-size = 0
 border-color = #000000
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "Sauce Code Pro Nerd Font:pixelsize=12;2"
+font-0 = "SourceCodePro:pixelsize=12;3"
 font-1 = "Iosevka Nerd Font:size=16;4"
-font-2 = "Icons:size=14;4"
+font-2 = "Iosevka Nerd Font:size=12;3"
 modules-left = bspwm i3
 modules-right = updates cpu temperature memory system movies series wlan eth xkeyboard date
 tray-position = right
@@ -37,7 +37,7 @@ border-color = #000000
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "Sauce Code Pro Nerd Font:pixelsize=12;2"
+font-0 = "SourceCodePro:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:size=16;4"
 modules-left = bspwm i3
 modules-right = date
@@ -97,7 +97,7 @@ format = <label-state> <label-mode>
 type = custom/script
 exec = ~/.config/polybar/updates.sh
 interval = 600
-label =  %output%
+label = %{T3}%{T-}  %output%
 
 [module/cpu]
 type = internal/cpu
