@@ -36,7 +36,7 @@ entertainmentHubSSH(){
 }
 
 alias rodrigo="ssh pi@rodrigobot.ddns.net"
-alias entertainmenthub="entertainmentHubSSH 34.91.118.153"
+alias entertainmenthub="entertainmentHubSSH 34.90.183.153"
 
 alias programming="cd ~/Documents/Programming/Web/node"
 
