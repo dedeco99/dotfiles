@@ -1,5 +1,6 @@
 #! /bin/sh
 
+pulseaudio --start
 sxhkd &
 albert &
 nm-applet &
