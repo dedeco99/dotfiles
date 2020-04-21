@@ -35,8 +35,10 @@ entertainmentHubSSH(){
     ssh $1
 }
 
+alias ssh="kitty +kitten ssh"
+
 alias rodrigo="ssh pi@rodrigobot.ddns.net"
-alias entertainmenthub="entertainmentHubSSH 34.90.183.153"
+alias entertainmenthub="entertainmentHubSSH entertainmenthub.ddns.net"
 
 alias programming="cd ~/Documents/Programming/Web/node"
 
