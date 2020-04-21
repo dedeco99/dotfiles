@@ -98,6 +98,7 @@ install dropbox freefilesync multimc-git plex-media-server robo3t-bin python-sub
 
 /*** Setup Theme ***/
 install adapta-gtk-theme xcursor-breeze papirus-icon-theme
+install qt5ct kvantum-qt5 kvantum-theme-adapta
 
 /*** Setup polybar ***/
 install polybar
