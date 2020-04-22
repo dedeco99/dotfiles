@@ -34,8 +34,15 @@ alt + {t, f, m}
 	bspc node -t {tiled, floating, fullscreen}
 
 # focus the node in the given direction
-alt + {Up, Down, Left, Down}
+alt + {Up, Down, Left, Right}
 	bspc node -f {north, south, west, east}
+
+# move the node in the given direction
+alt + shift + {Up, Down, Left, Right}
+	bspc node -f @parent; bspc node -F {horizontal, horizontal, vertical, vertical}
+
+alt + shift + z
+	bspc node -f @parent; bspc node -E
 
 # focus on the given workspace
 alt + {1-9}
