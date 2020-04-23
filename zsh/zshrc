@@ -52,4 +52,4 @@ alias undo="git reset --soft HEAD~1"
 alias updatecoins="cd ~/Documents/Programming/Python/coinmarketcap && python coinmarketcap.py"
 alias updateinsta="cd ~/Documents/Programming/Python/Instaloader && sh instaloader.sh"
 
-alias timer="termdown -b --no-figlet"
+alias timer="cd ~/Documents/Programming && sh timer.sh"
