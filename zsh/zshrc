@@ -23,7 +23,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 antigen apply
 
 # Aliases
-alias update="yay -Syu"
+alias update="yay -Syu && polybar-msg hook updates 1"
 alias install="yay -S"
 alias uninstall="yay -Rsn"
 alias search="yay -Ss"
@@ -51,5 +51,3 @@ alias undo="git reset --soft HEAD~1"
 
 alias updatecoins="cd ~/Documents/Programming/Python/coinmarketcap && python coinmarketcap.py"
 alias updateinsta="cd ~/Documents/Programming/Python/Instaloader && sh instaloader.sh"
-
-alias timer="cd ~/Documents/Programming && sh timer.sh"

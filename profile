@@ -1,3 +1,4 @@
+export PATH="$PATH:/home/dedeco99/scripts"
 export EDITOR="nano"
 export TERMINAL="kitty"
 export BROWSER="firefox"

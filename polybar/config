@@ -24,6 +24,7 @@ font-2 = "Iosevka Nerd Font:size=12;3"
 modules-left = bspwm i3
 modules-right = updates cpu temperature memory system movies series wlan eth xkeyboard date
 tray-position = right
+enable-ipc = true
 
 [bar/left]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -94,9 +95,9 @@ label-urgent-background = ${colors.alert}
 format = <label-state> <label-mode>
 
 [module/updates]
-type = custom/script
-exec = ~/.config/polybar/updates.sh
-interval = 600
+type = custom/ipc
+hook-0 = ~/.config/polybar/updates.sh
+initial = 1
 label = %{T3}%{T-}  %output%
 
 [module/cpu]
