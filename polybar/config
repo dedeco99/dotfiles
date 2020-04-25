@@ -25,6 +25,7 @@ modules-left = bspwm i3
 modules-right = updates cpu temperature memory system movies series wlan eth xkeyboard date
 tray-position = right
 enable-ipc = true
+wm-restack = bspwm
 
 [bar/left]
 monitor = ${env:MONITOR:DVI-D-0}
