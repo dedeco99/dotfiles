@@ -99,7 +99,8 @@ format = <label-state> <label-mode>
 type = custom/ipc
 hook-0 = ~/.config/polybar/updates.sh
 initial = 1
-label = %{T3}%{T-}  %output%
+
+format = <output>
 
 [module/cpu]
 type = internal/cpu
