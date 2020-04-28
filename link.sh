@@ -32,6 +32,7 @@ function parseArgs() {
 	cp ./mpd/mpd.conf ~/.config/mpd/mpd.conf
 	[ ! -d ~/.config/ncmpcpp ] && mkdir ~/.config/ncmpcpp
 	cp ./ncmpcpp/config ~/.config/ncmpcpp/config
+	cp ./ncmpcpp/bindings ~/.config/ncmpcpp/bindings
 }
 
 parseArgs "$@"
