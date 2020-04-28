@@ -13,7 +13,7 @@ function parseArgs() {
 
 	cp ./xorg/xinitrc ~/.xinitrc
 	cp ./xorg/Xresources ~/.Xresources
-	cp ./profile ~/.profile
+	cp ./profile ~/.zprofile
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
 	[ ! -d ~/.config/kitty ] && mkdir ~/.config/kitty
@@ -28,6 +28,10 @@ function parseArgs() {
 	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 	cp ./polybar/updates.sh ~/.config/polybar/updates.sh
 	chmod +x ~/.config/polybar/updates.sh
+	[ ! -d ~/.config/mpd ] && mkdir ~/.config/mpd
+	cp ./mpd/mpd.conf ~/.config/mpd/mpd.conf
+	[ ! -d ~/.config/ncmpcpp ] && mkdir ~/.config/ncmpcpp
+	cp ./ncmpcpp/config ~/.config/ncmpcpp/config
 }
 
 parseArgs "$@"
