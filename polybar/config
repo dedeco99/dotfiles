@@ -23,7 +23,7 @@ font-1 = "Iosevka Nerd Font:size=16;4"
 font-2 = "Iosevka Nerd Font:size=12;3"
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = updates cpu temperature memory system movies series wlan eth xkeyboard date
+modules-right = updates cpu temperature memory home movies series wlan eth xkeyboard date
 tray-position = right
 enable-ipc = true
 wm-restack = bspwm
@@ -142,12 +142,12 @@ label = %gb_used%
 format = <label>
 format-prefix = "RAM "
 
-[module/system]
+[module/home]
 type = internal/fs
 interval = 25
-mount-0 = /
-label-mounted = System %percentage_used%%
-label-unmounted = System unmounted
+mount-0 = /home
+label-mounted = Home %percentage_used%%
+label-unmounted = Home unmounted
 label-unmounted-foreground = ${colors.alert}
 
 [module/movies]
