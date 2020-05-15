@@ -44,6 +44,9 @@ alt + shift + {Up, Down, Left, Right}
 alt + shift + z
 	bspc node -f @parent; bspc node -E
 
+alt + shift + x
+	bspc node -f @parent; bspc node -R 90
+
 # focus on the given workspace
 alt + {1-9}
 	bspc desktop -f ^{1-9}
