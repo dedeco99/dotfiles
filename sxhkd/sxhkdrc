@@ -5,6 +5,9 @@
 super + {1, 2, 3}
 	{firefox, pcmanfm, kitty}
 
+alt + c
+	kitty -e bc -q
+
 # lock screen
 super + l
 	i3lock -c 000000

@@ -22,6 +22,8 @@ bspc config gapless_monocle true
 bspc rule -a albert focus=on
 bspc rule -a firefox desktop="^1" split_dir=north split_ratio=0.75
 bspc rule -a kitty desktop="^1" split_dir=south split_ratio=0.75
+bspc rule -r kitty
+bspc rule -a kitty state=floating rectangle=400x400+0+0 center=true
 bspc rule -a discord desktop="^2" split_dir=north split_ratio=0.75
 bspc rule -a Deluge-gtk desktop="^2" split_dir=south split_ratio=0.75
 bspc rule -a firefox:Navigator desktop="^4" split_dir=east split_ratio=0.5
