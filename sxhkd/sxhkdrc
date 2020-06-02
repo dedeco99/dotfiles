@@ -6,7 +6,7 @@ super + {1, 2, 3}
 	{firefox, pcmanfm, kitty}
 
 alt + c
-	kitty -e bc -q
+	kitty -e bc -ql
 
 # lock screen
 super + l
