@@ -16,6 +16,7 @@ function parseArgs() {
 	cp ./profile ~/.zprofile
 	cp ./zsh/antigen.zsh ~/antigen.zsh
 	cp ./zsh/zshrc ~/.zshrc
+	cp ./crontab/dedeco99 /var/spool/cron/dedeco99
 	[ ! -d ~/.config/kitty ] && mkdir ~/.config/kitty
 	cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 	[ ! -d ~/.config/dunst ] && mkdir ~/.config/dunst
