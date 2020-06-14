@@ -45,6 +45,23 @@ font-1 = "Iosevka Nerd Font:size=16;4"
 modules-left = bspwm i3
 modules-right = date
 
+[bar/right]
+monitor = ${env:MONITOR:HDMI-0}
+width = 100%
+height = 30
+bottom = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+border-size = 0
+border-color = #000000
+padding-right = 1
+module-margin-left = 0
+module-margin-right = 2
+font-0 = "SourceCodePro:pixelsize=12;2"
+font-1 = "Iosevka Nerd Font:size=16;4"
+modules-left = bspwm i3
+modules-right = date
+
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true

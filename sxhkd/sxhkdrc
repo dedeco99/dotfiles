@@ -2,8 +2,8 @@
 # wm independent hotkeys
 #
 
-super + {1, 2, 3}
-	{firefox, pcmanfm, kitty}
+super + {1,2,3}
+	{firefox,pcmanfm,kitty}
 
 alt + c
 	bspc rule -r kitty;\
@@ -21,8 +21,8 @@ Print
 	flameshot gui
 
 # Switch keyboard layouts
-alt + {u, p}
-	setxkbmap -layout {us, pt}
+alt + {u,p}
+	setxkbmap -layout {us,pt}
 
 #
 # bspwm hotkeys
@@ -37,16 +37,16 @@ alt + shift + q
 	bspc node -c
 
 # set the window state
-alt + {t, f, m}
-	bspc node -t {tiled, floating, fullscreen}
+alt + {t,f,m}
+	bspc node -t {tiled,floating,fullscreen}
 
 # focus the node in the given direction
-alt + {Up, Down, Left, Right}
-	bspc node -f {north, south, west, east}
+alt + {Up,Down,Left,Right}
+	bspc node -f {north,south,west,east}
 
 # move the node in the given direction
-alt + shift + {Up, Down, Left, Right}
-	bspc node -f @parent; bspc node -F {horizontal, horizontal, vertical, vertical}
+alt + shift + {Up,Down,Left,Right}
+	bspc node -f @parent; bspc node -F {horizontal,horizontal,vertical,vertical}
 
 alt + shift + z
 	bspc node -f @parent; bspc node -E
@@ -55,15 +55,13 @@ alt + shift + x
 	bspc node -f @parent; bspc node -R 90
 
 # focus on the given workspace
-alt + {1-9}
-	bspc desktop -f ^{1-9}
+alt + {1-9,0}
+	bspc desktop -f ^{1-9,10}
 
 # send to the given workspace
-alt + shift + {1-9}
-	bspc node -d ^{1-9} --follow
+alt + shift + {1-9,0}
+	bspc node -d ^{1-9,10} --follow
 
-# move/resize
-
-# expand a window by moving one of its side outward
-alt + 0 ; {h, s, r, shift + s}
-	{systemctl hibernate, systemctl suspend, reboot, shutdown now}
+# system menu
+alt + 0 ; {h,s,r,shift + s}
+	{systemctl hibernate,systemctl suspend,reboot,shutdown now}
