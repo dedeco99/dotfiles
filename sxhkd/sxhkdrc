@@ -63,5 +63,5 @@ alt + shift + {1-9,0}
 	bspc node -d ^{1-9,10} --follow
 
 # system menu
-alt + 0 ; {h,s,r,shift + s}
+super + 0 ; {h,s,r,shift + s}
 	{systemctl hibernate,systemctl suspend,reboot,shutdown now}
