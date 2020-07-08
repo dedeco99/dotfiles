@@ -15,6 +15,7 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 # POWERLEVEL9K_MODE="nerdfont-complete"
 # POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0BC'
 # POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0BA'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -37,10 +38,11 @@ entertainmentHubSSH(){
 
 alias ssh="kitty +kitten ssh"
 
-alias rodrigo="ssh pi@rodrigobot.ddns.net"
-alias entertainmenthub="entertainmentHubSSH entertainmenthub.ddns.net"
+alias rodrigo-ssh="ssh pi@rodrigobot.ddns.net"
+alias eh-ssh="entertainmentHubSSH entertainmenthub.ddns.net"
 
-alias programming="cd ~/Documents/Programming/Web/node"
+alias rodrigo-cd="cd ~/Documents/Programming/Web/node/rodrigobot"
+alias eh-cd="cd ~/Documents/Programming/Web/node/entertainmenthub/entertainmenthub/server"
 
 alias graph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%d%n %C(white)%<|(85,trunc)%s %C(bold green)%ad %C(dim white)%an' --date=format:'%d %b %Y %H:%M' --all"
 alias stage="git add"
