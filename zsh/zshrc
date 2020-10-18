@@ -39,10 +39,12 @@ entertainmentHubSSH(){
 alias ssh="kitty +kitten ssh"
 
 alias rodrigo-ssh="ssh pi@rodrigobot.ddns.net"
-alias eh-ssh="entertainmentHubSSH entertainmenthub.ddns.net"
+alias eh-ssh="entertainmentHubSSH ehub.rabbitsoftware.dev"
 
 alias rodrigo-cd="cd ~/Documents/Programming/Web/node/rodrigobot"
 alias eh-cd="cd ~/Documents/Programming/Web/node/entertainmenthub/entertainmenthub/server"
+alias rf-cd="cd ~/Documents/Programming/Web/node/pai/rabbitfinances/server"
+alias tc-cd="cd ~/Documents/Programming/Web/node/pai/tipycrm/server"
 
 alias graph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%d%n %C(white)%<|(85,trunc)%s %C(bold green)%ad %C(dim white)%an' --date=format:'%d %b %Y %H:%M' --all"
 alias stage="git add"
