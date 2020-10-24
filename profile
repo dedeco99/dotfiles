@@ -1,4 +1,4 @@
-export PATH="$PATH:/home/dedeco99/Documents/Programming/Bash/scripts"
+export PATH="$PATH:/home/dedeco99/Documents/Programming/Bash/dotfiles/scripts"
 export EDITOR="nano"
 export TERMINAL="kitty"
 export BROWSER="firefox"

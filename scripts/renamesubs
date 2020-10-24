@@ -1,0 +1,28 @@
+#!/bin/bash
+
+season=$1
+if [ $season -lt 10 ]; then
+	season="0$season"
+fi
+episode=0
+
+for i in *.mkv
+	do
+		episode=$((episode+1))
+		subFilename="${i%.*}.srt"
+
+		episodeString=$episode
+		if [ $episode -lt 10 ]; then
+			episodeString="0$episode"
+		fi
+
+		previousSubFilename=$(find -name *S"$season"E"$episodeString"*.srt)
+		if [ -z "$previousSubFilename" ]; then
+			previousSubFilename=$(find -name *s"$season"e"$episodeString"*.srt)
+		fi
+
+		if [ $previousSubFilename != ./${i%.*}.srt ]; then
+			echo "$previousSubFilename => ${i%.*}.srt"
+			mv $previousSubFilename ${i%.*}.srt
+		fi
+	done
