@@ -1,0 +1,4 @@
+#!/bin/bash
+
+termdown ${1} --no-figlet
+notify-send "Timer has finished"

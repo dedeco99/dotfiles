@@ -1,0 +1,3 @@
+#!/bin/sh
+
+deluge-console 'info' | awk '{for(i=1;i<=NR;i+=3) if(NR==i) printf "%s\n",$2}' | wc -l
