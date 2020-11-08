@@ -21,8 +21,8 @@ for i in *.mkv
 			previousSubFilename=$(find -name *s"$season"e"$episodeString"*.srt)
 		fi
 
-		if [ $previousSubFilename != ./${i%.*}.srt ]; then
+		if [ "$previousSubFilename" != "./${i%.*}.srt" ]; then
 			echo "$previousSubFilename => ${i%.*}.srt"
-			mv $previousSubFilename ${i%.*}.srt
+			mv "$previousSubFilename" "${i%.*}.srt"
 		fi
 	done
