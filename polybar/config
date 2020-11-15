@@ -200,7 +200,7 @@ label-unmounted-foreground = ${colors.alert}
 
 [module/wlan]
 type = internal/network
-interface = wlp6s0
+interface = enp8s0
 interval = 3.0
 label-connected = %downspeed% ↓ %upspeed% ↑
 format-connected = <label-connected>
