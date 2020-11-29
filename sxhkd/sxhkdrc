@@ -65,3 +65,7 @@ alt + shift + {1-9,0}
 # system menu
 super + 0 ; {h,s,r,shift + s}
 	{systemctl hibernate,systemctl suspend,reboot,shutdown now}
+
+# Toggle music on page up key
+Prior
+	mpc toggle
