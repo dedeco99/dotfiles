@@ -3,10 +3,10 @@
 start=`date +%s`
 
 if [[ -f $1 ]]; then
-    subsync "${1%.*}.mkv" -i "${1%.*}.srt" -o "${1%.*}.srt"
+    ffs "${1%.*}.mkv" -i "${1%.*}.srt" -o "${1%.*}.srt"
 else
     for i in *.srt
-		do subsync "${i%.*}.mkv" -i "${i%.*}.srt" -o "${i%.*}.srt"
+		do ffs "${i%.*}.mkv" -i "${i%.*}.srt" -o "${i%.*}.srt"
 	done
 fi
 
