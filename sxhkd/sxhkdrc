@@ -55,12 +55,12 @@ alt + shift + x
 	bspc node -f @parent; bspc node -R 90
 
 # focus on the given workspace
-alt + {1-9,0}
-	bspc desktop -f ^{1-9,10}
+alt + {0,1-8,9}
+	bspc desktop -f ^{1,2-9,10}
 
 # send to the given workspace
-alt + shift + {1-9,0}
-	bspc node -d ^{1-9,10} --follow
+alt + shift + {0,1-8,9}
+	bspc node -d ^{1,2-9,10} --follow
 
 # system menu
 super + 0 ; {h,s,r,shift + s}
