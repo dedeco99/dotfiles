@@ -77,6 +77,7 @@ font-0 = "SourceCodePro:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:size=16;4"
 modules-left = bspwm i3
 modules-right = date
+wm-restack = bspwm
 
 [module/bspwm]
 type = internal/bspwm

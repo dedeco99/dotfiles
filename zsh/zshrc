@@ -32,12 +32,19 @@ alias clean="yay -Yc"
 
 entertainmentHubSSH(){
     eval `ssh-agent -s`
+    ssh-add ~/.ssh/entertainmenthub.pem
+    ssh $1
+}
+
+tipySSH(){
+    eval `ssh-agent -s`
     ssh-add ~/.ssh/aws.pem
     ssh $1
 }
 
 alias ssh="kitty +kitten ssh"
 alias eh-ssh="entertainmentHubSSH ubuntu@ehub.rabbitsoftware.dev"
+alias tp-ssh="tipySSH ubuntu@faturas.tipyfamily.com"
 
 alias rodrigo-cd="cd ~/Documents/Programming/Web/node/rodrigobot"
 alias eh-cd="cd ~/Documents/Programming/Web/node/entertainmenthub/entertainmenthub/server"
