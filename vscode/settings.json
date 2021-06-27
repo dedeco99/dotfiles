@@ -1,0 +1,42 @@
+{
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.rulers": [115],
+  "javascript.format.enable": false,
+  "git.confirmSync": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "todo-tree.tree.showScanModeButton": false,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "[latex]": {
+    "editor.formatOnSave": false
+  },
+  "projectManager.git.baseFolders": [
+		"$home/Documents/Programming/Web/node",
+		"$home/Documents/Programming/Bash",
+		"$home/Documents/Programming/Mobile"
+	],
+	"projectManager.git.ignoredFolders": [
+		"zzarchive"
+	],
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"workbench.editor.pinnedTabSizing": "compact",
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
