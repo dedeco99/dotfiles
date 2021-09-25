@@ -22,7 +22,7 @@ font-0 = "SourceCodePro:pixelsize=12;3"
 font-1 = "Iosevka Nerd Font:size=16;4"
 font-2 = "Iosevka Nerd Font:size=12;3"
 modules-left = bspwm i3 mpd
-modules-right = updates cpu temperature memory gpu root home movies series smallBoy wlan xkeyboard date
+modules-right = updates cpu temperature memory gpu root home movies series wlan xkeyboard date
 tray-position = right
 enable-ipc = true
 wm-restack = bspwm
@@ -60,24 +60,6 @@ font-0 = "SourceCodePro:pixelsize=12;2"
 font-1 = "Iosevka Nerd Font:size=16;4"
 modules-left = bspwm i3
 modules-right = date
-
-[bar/top]
-monitor = ${env:MONITOR:DP-2}
-width = 100%
-height = 30
-bottom = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-border-size = 0
-border-color = #000000
-padding-right = 1
-module-margin-left = 0
-module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;2"
-font-1 = "Iosevka Nerd Font:size=16;4"
-modules-left = bspwm i3
-modules-right = date
-wm-restack = bspwm
 
 [module/bspwm]
 type = internal/bspwm
@@ -144,7 +126,7 @@ icon-repeatone = 綾
 icon-single = 凌
 toggle-on-foreground = #ff
 toggle-off-foreground = #55
-format-online = <icon-repeat>  <icon-prev>  <toggle>  <icon-next>  <icon-random> | <label-song> | <label-time>
+format-online = <icon-repeat>  <icon-prev>  <toggle>  <icon-next>  <icon-random>  | <label-song> | <label-time>
 
 [module/updates]
 type = custom/ipc
@@ -212,14 +194,6 @@ interval = 25
 mount-0 = /mnt/BigBoySeries
 label-mounted = Series %percentage_used%%
 label-unmounted = Series unmounted
-label-unmounted-foreground = ${colors.alert}
-
-[module/smallBoy]
-type = internal/fs
-interval = 25
-mount-0 = /mnt/SmallBoy
-label-mounted = SmallBoy %percentage_used%%
-label-unmounted = SmallBoy unmounted
 label-unmounted-foreground = ${colors.alert}
 
 [module/wlan]

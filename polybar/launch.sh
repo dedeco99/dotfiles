@@ -10,6 +10,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar main &
 polybar left &
 polybar right &
-polybar top &
 
 echo "Polybar launched..."
