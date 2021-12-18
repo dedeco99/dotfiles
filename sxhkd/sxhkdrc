@@ -2,8 +2,8 @@
 # wm independent hotkeys
 #
 
-super + {1,2,3}
-	{brave,pcmanfm,kitty}
+super + {1,2,3,4}
+	{brave,pcmanfm,kitty,code}
 
 alt + c
 	bspc rule -r kitty;\
