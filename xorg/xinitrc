@@ -36,5 +36,6 @@ xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --
 
 dunst &
 udiskie &
-mpd &
+mpd
+yams
 exec bspwm

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+start=`date +%s`
+
+cd "/home/dedeco99/Music/toSort"
+
+youtube-dl -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist\?list\=PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
+
+beet import -s .
+
+notify-send "MusicDL has finished"
+
+end=`date +%s`
+
+readableseconds $((end-start))
