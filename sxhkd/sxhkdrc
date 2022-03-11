@@ -21,8 +21,15 @@ Print
 	flameshot gui
 
 # Switch keyboard layouts
-alt + {u,p}
+super + {u,p}
 	setxkbmap -layout {us,pt}
+
+# handle dunst notifications
+super + {c,n}
+	dunstctl {close-all,history-pop}
+
+super + m
+	notify-send "Notifications are $(dunstctl is-paused)" && sleep 3s && dunstctl set-paused toggle 
 
 #
 # bspwm hotkeys
