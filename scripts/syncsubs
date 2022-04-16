@@ -1,14 +1,14 @@
 #!/bin/bash
 
-fileType=${2:mkv}
+fileType=${2:-mkv}
 
 start=`date +%s`
 
 if [[ -f $1 ]]; then
-    ffs "${1%.*}.$2" -i "${1%.*}.srt" -o "${1%.*}.srt"
+    ffs "${1%.*}.$fileType" -i "${1%.*}.srt" -o "${1%.*}.srt"
 else
     for i in *.srt
-		do ffs "${i%.*}.$2" -i "${i%.*}.srt" -o "${i%.*}.srt"
+		do ffs "${i%.*}.$fileType" -i "${i%.*}.srt" -o "${i%.*}.srt"
 	done
 fi
 

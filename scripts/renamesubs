@@ -1,13 +1,13 @@
 #!/bin/bash
 
 season=$1
-fileType=${2:mkv}
+fileType=${2:-mkv}
 if [ $season -lt 10 ]; then
 	season="0$season"
 fi
 episode=0
 
-for i in *.$2
+for i in *.$fileType
 	do
 		episode=$((episode+1))
 		subFilename="${i%.*}.srt"

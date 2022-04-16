@@ -41,6 +41,7 @@ alias tf-cd="cd ~/Documents/Programming/Web/node/pai/tipy-faturas/server"
 alias tr-cd="cd ~/Documents/Programming/Web/node/pai/tipy-recrutamento/server"
 alias tp-cd="cd ~/Documents/Programming/Web/node/pai/tipy-pipeline/server"
 alias tm-cd="cd ~/Documents/Programming/Web/node/pai/tipy-main/server"
+alias ta-cd="cd ~/Documents/Programming/Web/node/pai/tipy-agenda/server"
 
 alias graph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%d%n %C(white)%<|(85,trunc)%s %C(bold green)%ad %C(dim white)%an' --date=format:'%d %b %Y %H:%M' --all"
 alias stage="git add"
