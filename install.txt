@@ -23,6 +23,9 @@ pacstrap /mnt base base-devel linux linux-firmware nano
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
+pacman-key --init
+pacman-key --populate archlinux
+
 /*** Setup network manager ***/
 pacman -S networkmanager
 systemctl enable NetworkManager
@@ -34,7 +37,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 /*** Set locale ***/
 nano /etc/locale.gen
-// uncomment es_US lines (and other languages you want)
+// uncomment en_US lines (and other languages you want)
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
@@ -58,14 +61,14 @@ sudo nano /etc/sudoers
 // uncomment %wheel ALL=(All) ALL
 
 /*** Setup graphical interface ***/
-sudo pacman -S xorg-server xorg-xinit
+sudo pacman -S xorg-server xorg-xinit pkgfile xorg-xrandr nvidia lib32-nvidia-libgl
 
 /*** Setup window manager ***/
 sudo pacman -S bspwm sxhkd
 
 /*** Setup display manager ***/
-sudo pacman -S lightdm lightdm-gtk-greeter
-sudo systemctl enable lightdm
+// sudo pacman -S lightdm lightdm-gtk-greeter
+// sudo systemctl enable lightdm
 
 /*** Setup terminal ***/
 sudo pacman -S git zsh kitty
@@ -81,9 +84,6 @@ sh link.sh {i3, bspwm}
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-
-/*** Install my packages ***/
-install git pkgfile xorg-xrandr nvidia lib32-nvidia-libgl
 
 sudo nvidia-xconfig
 sudo pkgfile -u

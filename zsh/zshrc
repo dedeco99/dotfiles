@@ -31,12 +31,13 @@ alias search="yay -Ss"
 alias clean="yay -Yc"
 
 alias eh-ssh="ssh ehub.rabbitsoftware.dev"
-alias tp-ssh="ssh faturas.tipyfamily.com"
+alias tp-ssh="ssh tipyfamily.com"
 
 alias r-cd="cd ~/Documents/Programming/Web/node/rodrigobot"
 alias eh-cd="cd ~/Documents/Programming/Web/node/entertainmenthub/entertainmenthub/server"
 alias hk-cd="cd ~/Documents/Programming/Mobile/housekeeper"
 
+alias t-cd="cd ~/Documents/Programming/Web/node/pai/tipy/server"
 alias tf-cd="cd ~/Documents/Programming/Web/node/pai/tipy-faturas/server"
 alias tr-cd="cd ~/Documents/Programming/Web/node/pai/tipy-recrutamento/server"
 alias tp-cd="cd ~/Documents/Programming/Web/node/pai/tipy-pipeline/server"

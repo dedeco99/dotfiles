@@ -28,6 +28,7 @@ function parseArgs() {
 	cp ./polybar/config ~/.config/polybar/config
 	cp ./polybar/launch.sh ~/.config/polybar/launch.sh
 	cp ./polybar/updates.sh ~/.config/polybar/updates.sh
+	cp ./polybar/tipy.sh ~/.config/polybar/tipy.sh
 	chmod +x ~/.config/polybar/updates.sh
 	[ ! -d ~/.config/mpd ] && mkdir ~/.config/mpd
 	cp ./mpd/mpd.conf ~/.config/mpd/mpd.conf
