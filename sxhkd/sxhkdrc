@@ -5,7 +5,16 @@
 super + {1,2,3,4}
 	{brave,pcmanfm,kitty,code}
 
+alt + d
+	rofi -show drun
+
+alt + x
+	websearch
+
 alt + c
+	rofi -show calc -modi calc -no-show-match -no-sort -hint-welcome "" -hint-result ""
+
+alt + shift + c
 	bspc rule -r kitty;\
 	bspc rule -a kitty state=floating rectangle=400x400+0+0 center=true;\
 	kitty -e bc -ql;\
@@ -30,6 +39,14 @@ super + {c,n}
 
 super + m
 	notify-send "Notifications are $(dunstctl is-paused)" && sleep 3s && dunstctl set-paused toggle 
+
+# system menu
+super + 0 ; {h,s,r,shift + s}
+	{systemctl hibernate,systemctl suspend,reboot,shutdown now}
+
+# Toggle music on page up key
+Prior
+	mpc toggle
 
 #
 # bspwm hotkeys
@@ -68,11 +85,3 @@ alt + {1-9,0}
 # send to the given workspace
 alt + shift + {1-9,0}
 	bspc node -d ^{1-9,10} --follow
-
-# system menu
-super + 0 ; {h,s,r,shift + s}
-	{systemctl hibernate,systemctl suspend,reboot,shutdown now}
-
-# Toggle music on page up key
-Prior
-	mpc toggle

@@ -35,6 +35,9 @@ function parseArgs() {
 	[ ! -d ~/.config/ncmpcpp ] && mkdir ~/.config/ncmpcpp
 	cp ./ncmpcpp/config ~/.config/ncmpcpp/config
 	cp ./ncmpcpp/bindings ~/.config/ncmpcpp/bindings
+	[ ! -d ~/.config/rofi ] && mkdir ~/.config/rofi
+	cp ./rofi/config.rasi ~/.config/rofi/config.rasi
+	cp ./rofi/theme.rasi ~/.config/rofi/theme.rasi
 }
 
 parseArgs "$@"
