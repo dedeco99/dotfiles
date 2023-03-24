@@ -1,3 +1,59 @@
 #!/bin/sh
 
-deluge-console 'info' | awk '{for(i=1;i<=NR;i+=3) if(NR==i) printf "%s\n",$2}' | wc -l
+downloadFolder="/home/dedeco99/Downloads/Torrents";
+videoFolder="/home/dedeco99/Videos/Torrents";
+
+torrents=$(deluge console 'info' --sort-reverse progress);
+
+files=$(awk '{for(i=1;i<=NR;i+=3) if(NR==i && $2=="100%") print $3}' <<< $torrents);
+
+for file in $files; do
+	mv $downloadFolder/$file $videoFolder/$file;
+done
+
+cd $videoFolder;
+
+function moveFiles
+{
+	for dir in */; do
+		srts=$(ls -1 $dir/*.srt 2>/dev/null | wc -l);
+
+		if [ $srts != 0 ]
+		then
+			arrSplit=(${dir//.S0/ });
+			hasSeason=${arrSplit[1]};
+			newDir=${arrSplit[0]};
+			finalDir=$dir;
+			scpDir="Movies";
+			isTV=true;
+
+			if [ -z "$hasSeason" ]; then
+				isTV=false;
+			fi
+
+			if [ $isTV == true ]; then
+				finalDir="${newDir//\./ }";
+				scpDir="TVShows";
+
+				mv $dir "$finalDir";
+			fi
+
+			echo $finalDir;
+			
+			sshpass -p $1 scp -r "$finalDir" dedeco99@192.168.1.238:/BigBoyWIP/$scpDir;
+
+			rm -rf "$finalDir";
+		fi
+	done
+
+	echo "Files moved";
+}
+
+#subliminal --opensubtitles dedeco99 $1 download -l pt -s .;
+
+moveFiles;
+
+subliminal --opensubtitles dedeco99 $1 download -l pt-br -s .;
+
+moveFiles;
+

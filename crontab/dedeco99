@@ -1,1 +1,2 @@
 0,30 * * * * polybar-msg action "#updates.hook.0"
+30 10 * * * /home/dedeco99/Documents/Programming/Python/Instaloader/gui.sh
