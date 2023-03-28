@@ -16,7 +16,7 @@ cd $videoFolder;
 function moveFiles
 {
 	for dir in */; do
-		srts=$(ls -1 $dir/*.srt 2>/dev/null | wc -l);
+		srts=$(ls -1 "$dir"/*.srt 2>/dev/null | wc -l);
 
 		if [ $srts != 0 ]
 		then
@@ -35,13 +35,13 @@ function moveFiles
 				finalDir="${newDir//\./ }";
 				scpDir="TVShows";
 
-				mv $dir "$finalDir";
+				mv "$dir" "$finalDir";
 			fi
 
 			echo $finalDir;
-			
+		
 			sshpass -p $1 scp -r "$finalDir" dedeco99@192.168.1.238:/BigBoyWIP/$scpDir;
-
+			
 			rm -rf "$finalDir";
 		fi
 	done
@@ -49,11 +49,11 @@ function moveFiles
 	echo "Files moved";
 }
 
-#subliminal --opensubtitles dedeco99 $1 download -l pt -s .;
+subliminal --opensubtitles dedeco99 $1 download -l pt -s .;
 
-moveFiles;
+moveFiles $1;
 
 subliminal --opensubtitles dedeco99 $1 download -l pt-br -s .;
 
-moveFiles;
+moveFiles $1;
 

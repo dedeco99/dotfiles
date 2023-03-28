@@ -190,7 +190,7 @@ label-unmounted-foreground = ${colors.alert}
 
 [module/wlan]
 type = internal/network
-interface = enp8s0
+interface = enp9s0
 interval = 3.0
 label-connected = %downspeed:8% ↓ %upspeed:8% ↑
 format-connected = <label-connected>
@@ -200,7 +200,7 @@ format-disconnected-foreground = ${colors.alert}
 
 [module/eth]
 type = internal/network
-interface = enp5s0
+interface = enp9s0
 interval = 3.0
 label-connected = %local_ip%
 format-connected = <label-connected>

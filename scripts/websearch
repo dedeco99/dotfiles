@@ -5,5 +5,5 @@ selected="$(rofi -dmenu -l 0 -p "Search")";
 echo $selected;
 
 if [[ ! -z $selected ]]; then
-	brave "https://google.pt/search?q=$selected";
+	brave "https://google.com/search?q=$selected";
 fi
