@@ -16,9 +16,37 @@ cd $videoFolder;
 function moveFiles
 {
 	for dir in */; do
+		echo $dir;
+
+		if [ -d "$dir/Subs" ]; then
+			for file in $dir/*.mp4; do
+				filename=$(basename $file);
+				filename="${filename//\.mp4/}";
+				subs=$(ls "$dir/Subs/$filename" | grep "Portuguese");
+
+				if [ ! -z "$subs" ]; then
+					subSplit=(${subs// / });
+					finalSub=${subSplit[0]};
+
+					for sub in $subs; do
+						portugal=$(grep -w "$dir/Subs/$filename/$sub" -e "tu");
+
+						if [ ! -z "$portugal" ]; then
+							finalSub=$sub;
+						fi
+					done
+
+					mv "$dir/Subs/$filename/$finalSub" "$dir/$filename.srt";
+				fi
+			done
+		fi
+
+		subliminal --opensubtitles dedeco99 $1 download -l $2 -s "$dir";
+
+		mp4s=$(ls -1 "$dir"/*.mp4 2>/dev/null | wc -l);
 		srts=$(ls -1 "$dir"/*.srt 2>/dev/null | wc -l);
 
-		if [ $srts != 0 ]
+		if [ $mp4s == $srts ]
 		then
 			arrSplit=(${dir//.S0/ });
 			hasSeason=${arrSplit[1]};
@@ -49,11 +77,7 @@ function moveFiles
 	echo "Files moved";
 }
 
-subliminal --opensubtitles dedeco99 $1 download -l pt -s .;
+moveFiles $1 pt;
 
-moveFiles $1;
-
-subliminal --opensubtitles dedeco99 $1 download -l pt-br -s .;
-
-moveFiles $1;
+moveFiles $1 pt-br;
 
