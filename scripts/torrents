@@ -1,5 +1,9 @@
 #!/bin/sh
 
+fileType=${1:-mp4};
+
+read -s -p "Password: " password;
+
 downloadFolder="/home/dedeco99/Downloads/Torrents";
 videoFolder="/home/dedeco99/Videos/Torrents";
 
@@ -29,16 +33,16 @@ function moveFiles
 			isTV=false;
 		fi
 
-		mp4s=$(ls -1 "$dir"/*.mp4 2>/dev/null | wc -l);
+		mp4s=$(ls -1 "$dir"/*.$fileType 2>/dev/null | wc -l);
 		srts=$(ls -1 "$dir"/*.srt 2>/dev/null | wc -l);
 
 		if [ ! $mp4s == $srts ]; then
 			if [ -d "$dir/Subs" ]; then
-				for file in $dir/*.mp4; do
+				for file in $dir/*.$fileType; do
 					subDir="$dir/Subs";
 
 					filename=$(basename $file);
-					filename="${filename//\.mp4/}";
+					filename="${filename//\.$fileType/}";
 
 					if [ $isTV == true ]; then
 						subDir="$dir/Subs/$filename";
@@ -63,10 +67,10 @@ function moveFiles
 				done
 			fi
 
-			subliminal --opensubtitles dedeco99 $1 download -l $2 -s "$dir";
+			subliminal --opensubtitles dedeco99 "$password" download -l $1 -s "$dir";
 		fi
 
-		if [ $mp4s == $srts ]; then
+		if [ $mp4s != 0 ] && [ $mp4s == $srts ]; then
 			if [ $isTV == true ]; then
 				finalDir="${newDir//\./ }";
 				scpDir="TVShows";
@@ -76,7 +80,7 @@ function moveFiles
 
 			echo $finalDir;
 		
-			sshpass -p $1 scp -r "$finalDir" dedeco99@192.168.1.238:/BigBoyWIP/$scpDir;
+			sshpass -p "$password" scp -r "$finalDir" dedeco99@192.168.1.238:/BigBoyWIP/$scpDir;
 			
 			rm -rf "$finalDir";
 		fi
@@ -85,7 +89,7 @@ function moveFiles
 	echo "Files moved";
 }
 
-moveFiles $1 pt;
+moveFiles pt;
 
-moveFiles $1 pt-br;
+moveFiles pt-br;
 
