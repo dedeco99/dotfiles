@@ -18,47 +18,55 @@ function moveFiles
 	for dir in */; do
 		echo $dir;
 
-		if [ -d "$dir/Subs" ]; then
-			for file in $dir/*.mp4; do
-				filename=$(basename $file);
-				filename="${filename//\.mp4/}";
-				subs=$(ls "$dir/Subs/$filename" | grep "Portuguese");
+		arrSplit=(${dir//.S0/ });
+		hasSeason=${arrSplit[1]};
+		newDir=${arrSplit[0]};
+		finalDir=$dir;
+		scpDir="Movies";
+		isTV=true;
 
-				if [ ! -z "$subs" ]; then
-					subSplit=(${subs// / });
-					finalSub=${subSplit[0]};
-
-					for sub in $subs; do
-						portugal=$(grep -w "$dir/Subs/$filename/$sub" -e "tu");
-
-						if [ ! -z "$portugal" ]; then
-							finalSub=$sub;
-						fi
-					done
-
-					mv "$dir/Subs/$filename/$finalSub" "$dir/$filename.srt";
-				fi
-			done
+		if [ -z "$hasSeason" ]; then
+			isTV=false;
 		fi
-
-		subliminal --opensubtitles dedeco99 $1 download -l $2 -s "$dir";
 
 		mp4s=$(ls -1 "$dir"/*.mp4 2>/dev/null | wc -l);
 		srts=$(ls -1 "$dir"/*.srt 2>/dev/null | wc -l);
 
-		if [ $mp4s == $srts ]
-		then
-			arrSplit=(${dir//.S0/ });
-			hasSeason=${arrSplit[1]};
-			newDir=${arrSplit[0]};
-			finalDir=$dir;
-			scpDir="Movies";
-			isTV=true;
+		if [ ! $mp4s == $srts ]; then
+			if [ -d "$dir/Subs" ]; then
+				for file in $dir/*.mp4; do
+					subDir="$dir/Subs";
 
-			if [ -z "$hasSeason" ]; then
-				isTV=false;
+					filename=$(basename $file);
+					filename="${filename//\.mp4/}";
+
+					if [ $isTV == true ]; then
+						subDir="$dir/Subs/$filename";
+					fi
+
+					subs=$(ls $subDir | grep "Portuguese");
+
+					if [ ! -z "$subs" ]; then
+						subSplit=(${subs// / });
+						finalSub=${subSplit[0]};
+
+						for sub in $subs; do
+							portugal=$(grep -w "$subDir/$sub" -e "tu");
+
+							if [ ! -z "$portugal" ]; then
+								finalSub=$sub;
+							fi
+						done
+						
+						mv "$subDir/$finalSub" "$dir/$filename.srt";
+					fi
+				done
 			fi
 
+			subliminal --opensubtitles dedeco99 $1 download -l $2 -s "$dir";
+		fi
+
+		if [ $mp4s == $srts ]; then
 			if [ $isTV == true ]; then
 				finalDir="${newDir//\./ }";
 				scpDir="TVShows";
