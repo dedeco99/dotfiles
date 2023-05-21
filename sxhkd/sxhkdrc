@@ -84,4 +84,8 @@ alt + {1-9,0}
 
 # send to the given workspace
 alt + shift + {1-9,0}
+	bspc node -d ^{1-9,10}
+
+# send to the given workspace and follow
+alt + super + {1-9,0}
 	bspc node -d ^{1-9,10} --follow

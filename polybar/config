@@ -150,7 +150,7 @@ format = <label>
 
 [module/temperature]
 type = internal/temperature
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
 warn-temperature = 70
 label = %temperature-c%
 format = <label>
