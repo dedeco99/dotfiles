@@ -18,11 +18,10 @@ border-size = 0
 border-color = #000000
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;3"
-font-1 = "Iosevka Nerd Font:size=16;4"
-font-2 = "Iosevka Nerd Font:size=12;3"
+font-0 = "Source Code Pro:pixelsize=12;3"
+font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm mpd
-modules-right = tipy updates cpu temperature memory gpu root home wlan xkeyboard date
+modules-right = updates cpu temperature memory gpu root wlan xkeyboard date
 tray-position = right
 enable-ipc = true
 wm-restack = bspwm
@@ -39,8 +38,8 @@ border-color = #000000
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;2"
-font-1 = "Iosevka Nerd Font:size=16;4"
+font-0 = "Source Code Pro:pixelsize=12;3"
+font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm
 modules-right = date
 
@@ -56,24 +55,24 @@ border-color = #000000
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
-font-0 = "SourceCodePro:pixelsize=12;2"
-font-1 = "Iosevka Nerd Font:size=16;4"
+font-0 = "Source Code Pro:pixelsize=12;3"
+font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm
 modules-right = date
 
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
-ws-icon-0 = 1;❶
-ws-icon-1 = 2;❷
-ws-icon-2 = 3;❸
-ws-icon-3 = 4;❹
-ws-icon-4 = 5;❺
-ws-icon-5 = 6;❻
-ws-icon-6 = 7;❼
-ws-icon-7 = 8;❽
-ws-icon-8 = 9;❾
-ws-icon-9 = 10;❿
+ws-icon-0 = 1;󰲠
+ws-icon-1 = 2;󰲢
+ws-icon-2 = 3;󰲤
+ws-icon-3 = 4;󰲦
+ws-icon-4 = 5;󰲨
+ws-icon-5 = 6;󰲪
+ws-icon-6 = 7;󰲬
+ws-icon-7 = 8;󰲮
+ws-icon-8 = 9;󰲰
+ws-icon-9 = 10;󰿬
 label-focused = %icon%
 label-focused-background = ${colors.primary}
 label-focused-padding = 1
@@ -89,16 +88,16 @@ format = <label-state> <label-mode>
 [module/i3]
 type = internal/i3
 pin-workspaces = true
-ws-icon-0 = 1;❶
-ws-icon-1 = 2;❷
-ws-icon-2 = 3;❸
-ws-icon-3 = 4;❹
-ws-icon-4 = 5;❺
-ws-icon-5 = 6;❻
-ws-icon-6 = 7;❼
-ws-icon-7 = 8;❽
-ws-icon-8 = 9;❾
-ws-icon-9 = 10;❿
+ws-icon-0 = 1;󰲠
+ws-icon-1 = 2;󰲢
+ws-icon-2 = 3;󰲤
+ws-icon-3 = 4;󰲦
+ws-icon-4 = 5;󰲨
+ws-icon-5 = 6;󰲪
+ws-icon-6 = 7;󰲬
+ws-icon-7 = 8;󰲮
+ws-icon-8 = 9;󰲰
+ws-icon-9 = 10;󰿬
 label-focused = %icon%
 label-focused-padding = 1
 label-focused-background = ${colors.primary}
