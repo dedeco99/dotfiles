@@ -1,10 +1,15 @@
+// Easy setup
+archinstall
+
+// Hard setup
+
 /*** Connect to wifi if necessary ***/
 wifi-menu
 
 /*** Create partitions ***/
 fdisk -l
 fdisk /dev/sda
-// 4 partitions: boot (200M), swap (150% RAM), root (30G), home
+// 3 partitions: boot (500M), swap (150% RAM), home
 mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda3
 mkfs.ext4 /dev/sda4
@@ -13,8 +18,8 @@ swapon /dev/sda2
 mount /dev/sda3 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
-mkdir /mnt/home
-mount /dev/sda4 /mnt/home
+
+timedatectl set-timezone Europe/Lisbon
 
 /*** Install base packages ***/
 pacstrap /mnt base base-devel linux linux-firmware nano
@@ -23,28 +28,30 @@ pacstrap /mnt base base-devel linux linux-firmware nano
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
-pacman-key --init
-pacman-key --populate archlinux
+/*** Set locale ***/
+ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
+hwclock --systohc
+
+nano /etc/locale.gen
+// uncomment en_US lines (and other languages you want)
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+
+/*** Setup host ***/
+echo dedeco99-PC > /etc/hostname
+passwd
 
 /*** Setup network manager ***/
-pacman -S networkmanager
-systemctl enable NetworkManager
+// pacman -S networkmanager
+// systemctl enable NetworkManager
+
+// pacman-key --init
+// pacman-key --populate archlinux
 
 /*** Setup grub ***/
 pacman -S grub
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-
-/*** Set locale ***/
-nano /etc/locale.gen
-// uncomment en_US lines (and other languages you want)
-locale-gen
-echo LANG=en_US.UTF-8 > /etc/locale.conf
-ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
-
-/*** Setup host ***/
-echo dedeco99-PC > /etc/hostname
-passwd
 
 /*** Reboot ***/
 exit
@@ -94,25 +101,23 @@ sudo nvidia-xconfig
 sudo pkgfile -u
 
 /*** Install my packages ***/
-install ncdu p7zip udisks2 udiskie i3lock termdown picard reflector pacgraph via-bin flutter neofetch
-install nodejs-lts-hydrogen npm pulseaudio pavucontrol mpd
-install libnotify dunst rofi flameshot vlc ncmpcpp
-install pcmanfm code discord deluge-gtk steam peek nsxiv polybar
-install beets ntfs-3g polkit-gnome
+install polybar i3lock libnotify dunst rofi rofi-calc bc flameshot peek pcmanfm file-roller gvfs
+install discord deluge-gtk steam nsxiv vlc mpd mpc ncmpcpp
+install ntfs-3g polkit-gnome cronie sshpass
+install code nodejs-lts-hydrogen npm mongodb-tools-bin studio-3t
+install brave-bin freefilesync-bin etcher-bin
+install python-ffsubsync subliminal yt-dlp instaloader beets picard
 
-/*** Install AUR packages ***/
-install brave-bin freefilesync-bin mongodb-tools-bin robo3t-bin etcher-bin
-install python-ffsubsync subliminal yt-dlp instaloader
+// install ncdu p7zip udisks2 udiskie termdown reflector pacgraph via-bin neofetch
+// install pulseaudio pavucontrol
 
 /*** Setup Theme ***/
-install adapta-gtk-theme papirus-icon-theme xcursor-breeze
-install qt5ct kvantum-qt5 kvantum-theme-adapta
+install adapta-gtk-theme papirus-icon-theme
 
-/*** Setup system applets ***/
-install network-manager-applet
+// install qt5ct kvantum-qt5 kvantum-theme-adapta xcursor-breeze
 
 /*** Setup fonts ***/
-install ttf-sourcecodepro-nerd ttf-iosevka-nerd noto-fonts noto-fonts-emoji
+install ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk
 
 /*** Setup git ***/
 git config --global credential.helper store

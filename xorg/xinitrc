@@ -36,7 +36,5 @@ xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
-udiskie &
 mpd
-yams
 exec bspwm
