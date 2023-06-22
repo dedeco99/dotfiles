@@ -21,7 +21,7 @@ module-margin-right = 2
 font-0 = "Source Code Pro:pixelsize=12;3"
 font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm mpd
-modules-right = updates cpu temperature memory gpu root wlan xkeyboard date
+modules-right = updates cpu temperature memory gpu root battery battery2 backlight pulseaudio wlan eth xkeyboard date
 tray-position = right
 enable-ipc = true
 wm-restack = bspwm
@@ -143,9 +143,7 @@ format = <output>
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = %percentage:2%%
 format-prefix = "CPU "
-format = <label>
 
 [module/temperature]
 type = internal/temperature
@@ -161,8 +159,7 @@ label-warn-foreground = ${colors.alert}
 type = internal/memory
 interval = 2
 label = %gb_used:9%
-format = <label>
-format-prefix = "RAM "
+format-prefix = "RAM"
 
 [module/gpu]
 type = custom/script
@@ -189,7 +186,7 @@ label-unmounted-foreground = ${colors.alert}
 
 [module/wlan]
 type = internal/network
-interface = enp9s0
+interface = wlan0
 interval = 3.0
 label-connected = %downspeed:8% ↓ %upspeed:8% ↑
 format-connected = <label-connected>
@@ -201,7 +198,7 @@ format-disconnected-foreground = ${colors.alert}
 type = internal/network
 interface = enp9s0
 interval = 3.0
-label-connected = %local_ip%
+label-connected = %downspeed:8% ↓ %upspeed:8% ↑
 format-connected = <label-connected>
 label-disconnected = Disconnected
 format-disconnected = <label-disconnected>
@@ -221,3 +218,44 @@ time = %H:%M
 time-alt = %H:%M:%S
 label = %date% %time%
 format = <label>
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+format-charging = 󰂅 <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+poll-interval = 2
+
+[module/battery2]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+format-charging = 󰠠 <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+poll-interval = 2
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+label = 󰳲 %percentage%%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+label-muted = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
