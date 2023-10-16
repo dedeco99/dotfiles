@@ -10,7 +10,7 @@ rclone -P sync ~/Music googleDrive:Music
 echo "-----"
 rclone -P sync ~/Pictures --exclude .images/ googleDrive:Pictures
 echo "-----"
-rclone -P sync ~/Programming --exclude "Active Projects/" googleDrive:Programming
+rclone -P sync ~/Programming --exclude Projects/ googleDrive:Programming
 echo "-----"
 rclone -P sync ~/Videos googleDrive:Videos
 
