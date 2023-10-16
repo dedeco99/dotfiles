@@ -8,7 +8,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 height = 30
 bottom = true
@@ -21,13 +21,13 @@ module-margin-right = 2
 font-0 = "Source Code Pro:pixelsize=12;3"
 font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm mpd
-modules-right = updates cpu temperature memory gpu root battery battery2 backlight wlan eth xkeyboard date
+modules-right = updates cpu temperature memory gpu root battery battery2 backlight pulseaudio eth xkeyboard date
 tray-position = right
 enable-ipc = true
 wm-restack = bspwm
 
 [bar/left]
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 30
 bottom = true
@@ -41,10 +41,11 @@ module-margin-right = 2
 font-0 = "Source Code Pro:pixelsize=12;3"
 font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm
-modules-right = date
+modules-right = battery battery2 backlight pulseaudio xkeyboard date
+tray-position = right
 
 [bar/right]
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:HDMI-2}
 width = 100%
 height = 30
 bottom = true
@@ -125,6 +126,7 @@ icon-repeatone = 󰑘
 icon-single = 凌
 toggle-on-foreground = #ff
 toggle-off-foreground = #55
+label-song-maxlen = 50
 format-online = <icon-repeat>  <icon-prev>  <toggle>  <icon-next>  <icon-random>  | <label-song> | <label-time>
 
 [module/tipy]
@@ -147,7 +149,7 @@ format-prefix = "CPU "
 
 [module/temperature]
 type = internal/temperature
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon6/temp1_input
 warn-temperature = 70
 label = %temperature-c%
 format = <label>
@@ -196,7 +198,7 @@ format-disconnected-foreground = ${colors.alert}
 
 [module/eth]
 type = internal/network
-interface = enp9s0
+interface = enp0s31f6
 interval = 3.0
 label-connected = %downspeed:8% ↓ %upspeed:8% ↑
 format-connected = <label-connected>

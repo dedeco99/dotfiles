@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mode="multiple"
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -32,7 +33,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xrandr --output DP-0 --primary --output DVI-D-0 --rotate left --output HDMI-0 --rotate left --output HDMI-0 --right-of DP-0 --output DVI-D-0 --left-of DP-0
+if [ "$mode" = "multiple" ]; then
+	xrandr --output DP-1 --primary --output HDMI-2 --rotate left --right-of DP-1 --output eDP-1 --off
+else
+	xrandr --output eDP-1 --primary
+fi
+#xrandr --output HDMI-2 --primary --output eDP-1 --left-of HDMI-2
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
