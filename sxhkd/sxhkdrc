@@ -33,6 +33,15 @@ Print
 super + {u,p}
 	setxkbmap -layout {us,pt}
 
+super + shift + {s,x}
+	xrandr --output eDP-1 --{auto,off}
+
+super + {c,d}
+	bluetoothctl -- {connect,disconnect} F8:4E:17:9D:38:BA
+
+super + shift + p
+	killall polybar
+	
 # handle dunst notifications
 super + {c,n}
 	dunstctl {close-all,history-pop}
