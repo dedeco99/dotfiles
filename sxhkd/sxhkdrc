@@ -41,6 +41,12 @@ super + {c,d}
 
 super + shift + p
 	killall polybar
+
+super + Down
+	idasen sit
+
+super + Up
+	idasen stand
 	
 # handle dunst notifications
 super + {c,n}
