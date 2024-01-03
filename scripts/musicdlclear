@@ -4,6 +4,8 @@ start=`date +%s`
 
 curl --header "Authorization: Bearer $1" https://ehub.rabbitsoftware.dev/api/youtube/playlist/PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_?clearPlaylist=false
 
+rm ~/Music/toSort/*
+
 end=`date +%s`
 
 readableseconds $((end-start))
