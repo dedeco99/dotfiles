@@ -25,3 +25,4 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 
 bspc rule -a '*:*:Picture in picture' state=floating
+bspc rule -a kitty split_ratio=0.75 split_dir=south
