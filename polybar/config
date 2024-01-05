@@ -41,7 +41,7 @@ module-margin-right = 2
 font-0 = "Source Code Pro:pixelsize=12;3"
 font-1 = "Sauce Code Pro Nerd Font Mono:size=23;6"
 modules-left = bspwm
-modules-right = battery battery2 backlight pulseaudio xkeyboard date
+modules-right = updates cpu temperature memory gpu root battery battery2 backlight pulseaudio eth xkeyboard date
 tray-position = right
 
 [bar/right]
