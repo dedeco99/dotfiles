@@ -2,16 +2,22 @@
 
 start=`date +%s`
 
+echo "Backups"
 rclone -P sync ~/Backups googleDrive:Backups
 echo "-----"
+echo "Documents"
 rclone -P sync ~/Documents googleDrive:Documents
 echo "-----"
+echo "Music"
 rclone -P sync ~/Music googleDrive:Music
 echo "-----"
+echo "Pictures"
 rclone -P sync ~/Pictures --exclude .images/ googleDrive:Pictures
 echo "-----"
+echo "Programming"
 rclone -P sync ~/Programming --exclude Projects/ googleDrive:Programming
 echo "-----"
+echo "Videos"
 rclone -P sync ~/Videos googleDrive:Videos
 
 notify-send "Backup has finished"

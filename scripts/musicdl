@@ -4,7 +4,9 @@ start=`date +%s`
 
 cd "/home/dedeco99/Music/toSort"
 
-yt-dlp -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist\?list\=PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
+# PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
+# PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
+yt-dlp -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist\?list\=PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
 
 beet import -s .
 

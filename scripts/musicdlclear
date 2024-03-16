@@ -1,8 +1,9 @@
 #!/bin/bash
 
 start=`date +%s`
-
-curl --header "Authorization: Bearer $1" https://ehub.rabbitsoftware.dev/api/youtube/playlist/PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_?clearPlaylist=false
+# PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
+# PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
+curl --header "Authorization: Bearer $1" https://ehub.rabbitsoftware.dev/api/youtube/playlist/PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j?clearPlaylist=false
 
 rm ~/Music/toSort/*
 

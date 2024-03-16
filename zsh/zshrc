@@ -35,7 +35,7 @@ alias tp-ssh="ssh tipyfamily.com"
 
 alias r-cd="cd ~/Programming/Projects/rodrigobot"
 alias eh-cd="cd ~/Programming/Projects/entertainmenthub/server"
-alias hk-cd="cd ~/Programming/Projects/housekeeper"
+alias hk-cd="cd ~/Programming/Projects/housekeeper/server"
 alias ch-cd="cd ~/Programming/Projects/chat"
 
 alias t-cd="cd ~/Programming/Projects/tipy/server"
