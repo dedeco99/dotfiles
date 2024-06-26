@@ -36,7 +36,7 @@ super + shift + {s,x}
 	xrandr --output eDP-1 --{auto,off}
 
 super + {c,d}
-	bluetoothctl -- {connect,disconnect} 28:52:E0:92:D6:D1
+	bluetoothctl -- {connect,disconnect} 28:52:E0:92:D6:D1 && pactl set-sink-volume @DEFAULT_SINK@ 50%
 
 super + shift + p
 	killall polybar
