@@ -4,9 +4,13 @@ start=`date +%s`
 
 cd "/home/dedeco99/Music/toSort"
 
-# PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
-# PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
-yt-dlp -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist\?list\=PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
+playlist="PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j"
+
+if [[ -n $1 ]]; then
+    playlist="PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_"
+fi
+
+yt-dlp -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist\?list\=$playlist
 
 beet import -s .
 

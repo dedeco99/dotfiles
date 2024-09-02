@@ -1,9 +1,14 @@
 #!/bin/bash
 
 start=`date +%s`
-# PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_
-# PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j
-curl --header "Authorization: Bearer $1" https://ehub.rabbitsoftware.dev/api/youtube/playlist/PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j?clearPlaylist=false
+
+playlist="PL_OrlqKoK4aRt6sajvTSCneLlOjFxsV_j"
+
+if [[ -n $2 ]]; then
+    playlist="PL_OrlqKoK4aSvR-uUQqTQt7-zIrYxouo_"
+fi
+
+curl --header "Authorization: Bearer $1" https://ehub.rabbitsoftware.dev/api/youtube/playlist/$playlist?clearPlaylist=false
 
 rm ~/Music/toSort/*
 
