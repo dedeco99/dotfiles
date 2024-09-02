@@ -11,13 +11,8 @@ cd $videoFolder;
 function moveFiles
 {
 	for dir in */; do
-		echo $dir;
-
 		arrSplit=(${dir//.S0/ });
 		hasSeason=${arrSplit[1]};
-		newDir=${arrSplit[0]};
-		finalDir=$dir;
-		scpDir="Movies";
 		isTV=true;
 
 		if [ -z "$hasSeason" ]; then
@@ -42,20 +37,22 @@ function moveFiles
 					unset finalSub;
 					
 					for sub in $subDir/*; do
-						if [[ $sub == *"_por"* ||  $sub == *"Portuguese"* ]]; then
+						if [[ $sub == *".por"* || $sub == *"_por"* ||  $sub == *"Portuguese"* ]]; then
 							if [[ $sub != *"Br"* &&  $sub != *"br"* ]]; then
 								finalSub=$sub;
 							fi
 						fi
 						
 						if [ -z "$finalSub" ]; then
-							if [[ $sub == *"_por"* ||  $sub == *"Portuguese"* ]]; then
+							if [[ $sub == *".por"* || $sub == *"_por"* ||  $sub == *"Portuguese"* ]]; then
 								finalSub=$sub;
 							fi
 						fi
 					done
 
-					mv "$finalSub" "$dir/$filename.srt";
+					if [ ! -z "$finalSub" ]; then
+						mv "$finalSub" "$dir/$filename.srt";
+					fi
 				done
 			fi
 		fi
@@ -64,20 +61,33 @@ function moveFiles
 	subliminal --opensubtitles dedeco99 "$password" download -l $1 -s .;
 
 	for dir in */; do
+		echo "Dir: $dir";
+
+		arrSplit=(${dir//.S0/ });
+		newDir=${arrSplit[0]};
+		finalDir=$dir;
+		scpDir="BigBoyMovies";
+		hasSeason=${arrSplit[1]};
+		isTV=true;
+
+		if [ -z "$hasSeason" ]; then
+			isTV=false;
+		fi
+		
 		mp4s=$(ls -1 "$dir"/*.$fileType 2>/dev/null | wc -l);
 		srts=$(ls -1 "$dir"/*.srt 2>/dev/null | wc -l);
 
 		if [ $mp4s != 0 ] && [ $mp4s == $srts ]; then
 			if [ $isTV == true ]; then
 				finalDir="${newDir//\./ }";
-				scpDir="TVShows";
+				scpDir="BigBoySeries";
 
 				mv "$dir" "$finalDir";
 			fi
 
-			echo $finalDir;
+			echo "Final Dir: $finalDir";
 		
-			sshpass -p "$password" scp -r "$finalDir" dedeco99@192.168.1.238:/BigBoyWIP/$scpDir;
+			sshpass -p "$password" scp -r "$finalDir" dedeco99@192.168.1.69:/$scpDir/BigBoyWIP;
 			
 			rm -rf "$finalDir";
 		fi
