@@ -9,6 +9,7 @@ function parseArgs() {
 		cp ./bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 		[ ! -d ~/.config/sxhkd ] && mkdir ~/.config/sxhkd
 		cp ./sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
+		cp ./bspwm/monitorMode ~/.config/bspwm/monitorMode
 	fi
 
 	cp ./xorg/xinitrc ~/.xinitrc
