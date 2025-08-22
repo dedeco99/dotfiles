@@ -116,7 +116,7 @@ install adapta-gtk-theme papirus-icon-theme
 // install qt5ct kvantum-qt5 kvantum-theme-adapta xcursor-breeze
 
 /*** Setup fonts ***/
-install ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk
+install ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk ttf-nerd-fonts-symbols-mono
 
 /*** Setup git ***/
 git config --global credential.helper store
