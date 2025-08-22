@@ -2,7 +2,7 @@
 
 fileType=${1:-mp4};
 
-read -s -p "Password: " password;
+#read -s -p "Password: " password;
 
 videoFolder="/home/dedeco99/Torrents";
 
@@ -49,16 +49,16 @@ function moveFiles
 							fi
 						fi
 					done
-
+										
 					if [ ! -z "$finalSub" ]; then
-						mv "$finalSub" "$dir/$filename.srt";
+						cp "$finalSub" "$dir/$filename.srt";
 					fi
 				done
 			fi
 		fi
 	done
 
-	subliminal --opensubtitles dedeco99 "$password" download -l $1 -s .;
+	#subliminal --opensubtitles dedeco99 "$password" download -l $1 -s .;
 
 	for dir in */; do
 		echo "Dir: $dir";
@@ -82,14 +82,14 @@ function moveFiles
 				finalDir="${newDir//\./ }";
 				scpDir="BigBoySeries";
 
-				mv "$dir" "$finalDir";
+				#mv "$dir" "$finalDir";
 			fi
 
 			echo "Final Dir: $finalDir";
 		
-			sshpass -p "$password" scp -r "$finalDir" dedeco99@192.168.1.69:/$scpDir/BigBoyWIP;
+			#sshpass -p "$password" scp -r "$finalDir" dedeco99@192.168.1.69:/$scpDir/BigBoyWIP;
 			
-			rm -rf "$finalDir";
+			#rm -rf "$finalDir";
 		fi
 	done
 
@@ -98,5 +98,5 @@ function moveFiles
 
 moveFiles pt;
 
-moveFiles pt-br;
+#moveFiles pt-br;
 
