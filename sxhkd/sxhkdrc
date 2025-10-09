@@ -48,7 +48,7 @@ super + Up
 	~/python/bin/idasen-controler --move-to 1200
 	
 # handle dunst notifications
-super + {c,n}
+super + {x,n}
 	dunstctl {close-all,history-pop}
 
 super + m

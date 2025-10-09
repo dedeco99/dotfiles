@@ -36,10 +36,13 @@ alias tp-ssh="ssh tipyfamily.com"
 alias r-cd="cd ~/Programming/Projects/rodrigobot"
 alias eh-cd="cd ~/Programming/Projects/entertainmenthub/server"
 alias hk-cd="cd ~/Programming/Projects/housekeeper/server"
-alias ch-cd="cd ~/Programming/Projects/chat"
 
 alias t-cd="cd ~/Programming/Projects/tipy/server"
 alias ta-cd="cd ~/Programming/Projects/tipy-agenda/server"
+
+alias c-cd="cd ~/Programming/Projects/custobar/custobar/webpack"
+alias c-tail="tailscale up --accept-routes"
+alias c-ip="sudo ip address add 10.1.1.20/32 dev lo:20 && sudo ip link set lo:20 up"
 
 alias graph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%d%n %C(white)%<|(85,trunc)%s %C(bold green)%ad %C(dim white)%an' --date=format:'%d %b %Y %H:%M' --all"
 alias stage="git add"
