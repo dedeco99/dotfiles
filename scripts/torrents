@@ -11,12 +11,10 @@ cd $videoFolder;
 function moveFiles
 {
 	for dir in */; do
-		arrSplit=(${dir//.S0/ });
-		hasSeason=${arrSplit[1]};
-		isTV=true;
+		isTV=false;
 
-		if [ -z "$hasSeason" ]; then
-			isTV=false;
+		if [[ $dir == *"S0"* || $dir == *"Season"* ]]; then
+			isTV=true;
 		fi
 
 		mp4s=$(ls -1 "$dir"/*.$fileType 2>/dev/null | wc -l);
@@ -24,19 +22,18 @@ function moveFiles
 
 		if [ ! $mp4s == $srts ]; then
 			if [ -d "$dir/Subs" ]; then
-				for file in $dir/*.$fileType; do
+				for file in "$dir"*.$fileType; do
 					subDir="$dir/Subs";
 
-					filename=$(basename $file);
+					filename=$(basename "$file");
 					filename="${filename//\.$fileType/}";
-
+					
 					if [ $isTV == true ]; then
 						subDir="$dir/Subs/$filename";
 					fi
 
 					unset finalSub;
-					
-					for sub in $subDir/*; do
+					for sub in "$subDir"/*; do
 						if [[ $sub == *".por"* || $sub == *"_por"* ||  $sub == *"Portuguese"* ]]; then
 							if [[ $sub != *"Br"* &&  $sub != *"br"* ]]; then
 								finalSub=$sub;
@@ -49,7 +46,7 @@ function moveFiles
 							fi
 						fi
 					done
-										
+
 					if [ ! -z "$finalSub" ]; then
 						cp "$finalSub" "$dir/$filename.srt";
 					fi
