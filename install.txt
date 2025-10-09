@@ -1,6 +1,49 @@
 // Easy setup
 archinstall
 
+sudo nano /etc/pacman.conf
+// uncomment [multilib]
+
+/*** Setup terminal ***/
+sudo pacman -S git zsh kitty
+
+/*** Change default shell ***/
+chsh -s /usr/bin/zsh
+
+/*** Setup my configs ***/
+git clone https://github.com/dedeco99/dotfiles
+sh link.sh
+
+/*** Install yay ***/
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+/*** Install my packages ***/
+install polybar i3lock libnotify dunst rofi rofi-calc bc flameshot peek pcmanfm file-roller gvfs pacman-contrib
+install discord deluge-gtk steam nsxiv vlc mpd mpc ncmpcpp pavucontrol
+install ntfs-3g polkit-gnome cronie sshpass
+install code nodejs-lts-hydrogen npm mongodb-tools-bin studio-3t
+install brave-bin freefilesync-bin caligula
+install python-ffsubsync subliminal yt-dlp instaloader beets picard
+
+// install ncdu p7zip udisks2 udiskie termdown reflector pacgraph via-bin neofetch
+
+/*** Setup Theme ***/
+install adapta-gtk-theme papirus-icon-theme
+
+// install qt5ct kvantum-qt5 kvantum-theme-adapta xcursor-breeze
+
+/*** Setup fonts ***/
+install ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk ttf-nerd-fonts-symbols-mono
+
+/*** Setup git ***/
+git config --global credential.helper store
+git pull
+
+/*** Setup ip (for wifi bullshitery) ***/
+nmcli con mod "MEO-B5DE4F-5G" ipv4.addresses "192.168.1.69" ipv4.gateway "192.168.1.254"  ipv4.method "manual"
+
 // Hard setup
 
 /*** Connect to wifi if necessary ***/
@@ -66,61 +109,3 @@ useradd -m -g wheel dedeco99
 passwd dedeco99
 sudo nano /etc/sudoers
 // uncomment %wheel ALL=(All) ALL
-
-sudo nano /etc/pacman.conf
-// uncomment [multilib]
-
-/*** Setup graphical interface ***/
-sudo pacman -S xorg-server xorg-xinit pkgfile xorg-xrandr nvidia lib32-nvidia-libgl
-
-sudo mkinitcpio -P
-
-/*** Setup window manager ***/
-sudo pacman -S bspwm sxhkd
-
-/*** Setup display manager ***/
-// sudo pacman -S lightdm lightdm-gtk-greeter
-// sudo systemctl enable lightdm
-
-/*** Setup terminal ***/
-sudo pacman -S git zsh kitty
-
-/*** Change default shell ***/
-chsh -s /usr/bin/zsh
-
-/*** Setup my configs ***/
-git clone https://github.com/dedeco99/dotfiles
-sh link.sh {i3, bspwm}
-
-/*** Install yay ***/
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-sudo nvidia-xconfig
-sudo pkgfile -u
-
-/*** Install my packages ***/
-install polybar i3lock libnotify dunst rofi rofi-calc bc flameshot peek pcmanfm file-roller gvfs pacman-contrib
-install discord deluge-gtk steam nsxiv vlc mpd mpc ncmpcpp pavucontrol
-install ntfs-3g polkit-gnome cronie sshpass
-install code nodejs-lts-hydrogen npm mongodb-tools-bin studio-3t
-install brave-bin freefilesync-bin etcher-bin
-install python-ffsubsync subliminal yt-dlp instaloader beets picard
-
-// install ncdu p7zip udisks2 udiskie termdown reflector pacgraph via-bin neofetch
-
-/*** Setup Theme ***/
-install adapta-gtk-theme papirus-icon-theme
-
-// install qt5ct kvantum-qt5 kvantum-theme-adapta xcursor-breeze
-
-/*** Setup fonts ***/
-install ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk ttf-nerd-fonts-symbols-mono
-
-/*** Setup git ***/
-git config --global credential.helper store
-git pull
-
-/*** Setup ip (for wifi bullshitery) ***/
-nmcli con mod "MEO-B5DE4F-5G" ipv4.addresses "192.168.1.69" ipv4.gateway "192.168.1.254"  ipv4.method "manual"
