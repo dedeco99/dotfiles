@@ -6,5 +6,5 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export CHROME_EXECUTABLE=brave
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-	startx
+	#hyprland
 fi
