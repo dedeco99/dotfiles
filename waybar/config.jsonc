@@ -1,0 +1,105 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    "modules-left": [
+			"hyprland/workspaces"
+    ],
+    "modules-right": [
+			"custom/updates",
+			"cpu",
+			"memory",
+			"temperature",
+			"disk",
+			"battery",
+			"backlight",
+			"wireplumber",
+			"network",
+			"hyprland/language",
+			"clock",
+			"tray"
+    ],
+		"custom/updates": {
+			"interval": 1800,
+			"exec": "updates",
+			"format": "{icon}  {text}",
+			"format-icons": {
+				"default": ""
+			},
+			"tooltip": false,
+			"on-click": "kitty yay -Syu",
+			"on-click-right": "updates"
+		},
+		"cpu": {
+      "format": " {icon} {usage}% ",
+			"format-icons": [""]
+    },
+    "memory": {
+      "format": "   {}% ",
+			"tooltip-format": "{used}GiB of {avail}GiB used"
+    },
+    "temperature": {
+			"critical-threshold": 80,
+			"format": "{icon} {temperatureC}°C",
+			"format-icons": [""]
+    },
+		"disk": {
+			"format": " 󱛟 {percentage_used}% ",
+			"tooltip-format": "{free} of {total} free"
+		},
+		"battery": {
+			"states": {
+				"good": 95,
+				"warning": 50,
+				"critical": 15
+			},
+			"format": "{icon} {capacity}%",
+			"format-full": "{icon} {capacity}%",
+			"format-charging": "󱐋 {capacity}%",
+			"format-plugged": " {capacity}%",
+			"format-icons": ["", "", "", "", ""]
+    },
+		"backlight": {
+			"format": "{icon} {percent}%",
+			"format-icons": ["", "", "", "", "", "", "", "", ""],
+			"on-click": "xbacklight -inc 10",
+			"on-click-right": "xbacklight -dec 10",
+			"tooltip": false,
+			"scroll-step": 5
+    },
+		"wireplumber": {
+			"format": "{icon} {volume}% {format_source}",
+			"format-muted": " {format_source}",
+			"format-source": "",
+			"format-source-muted": "",
+			"format-icons": {
+				"default": ["", "", ""]
+			},
+			"scroll-step": 5,
+			"on-click": "kitty wiremix",
+			"on-click-right": "kitty bluetui"
+    },
+		"network": {
+			"format-wifi": "{icon} {signalStrength}%",
+			"format-ethernet": "󰈀",
+			"format-disconnected": "󰤭",
+			"format-disabled": "󰤮",
+			"format-icons": {
+				"default": ["󰤯", "󰤟", "󰤢", "󰤨"]
+			},
+			"tooltip-format": "{essid} {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+			"on-click": "nmgui"
+    },
+		"hyprland/language": {
+			"format-en": " en ",
+			"format-pt": " pt ",
+			"on-click": "hyprctl switchxkblayout current next"
+		},
+		"clock": {
+			"tooltip-format": "{calendar}",
+			"format": "{:%d-%m-%Y %H:%M}"
+    }
+}

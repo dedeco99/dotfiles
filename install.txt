@@ -20,6 +20,7 @@ cd yay
 makepkg -si
 
 /*** Install my packages ***/
+wiremix
 install polybar i3lock libnotify dunst rofi rofi-calc bc flameshot peek pcmanfm file-roller gvfs pacman-contrib
 install discord deluge-gtk steam nsxiv vlc mpd mpc ncmpcpp pavucontrol
 install ntfs-3g polkit-gnome cronie sshpass

@@ -1,14 +1,7 @@
-/*
- * ROFI color theme
- *
- * Based on Something Found in the Internet
- *
- * User: Contributors
- * Copyright: *!
- */
+/* ---- Load colors ---- */
+@theme "~/.config/rofi/colors.rasi"
 
 configuration {
-
   drun {
     display-name: "";
   }
@@ -24,13 +17,8 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #222D31;
-  bg-alt: #496169;
-  fg: #d8d8d8;
-  fg-alt: #d8d8d8;
-
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @background;
+  text-color: @on-surface;
 }
 
 window {
@@ -46,7 +34,7 @@ mainbox {
 }
 
 inputbar {
-  background-color: #34454b;
+  background-color: @background;
   children: [prompt, entry];
 	
 }
@@ -88,6 +76,6 @@ element-text {
 }
 
 element-icon selected, element-text selected {
-  text-color: @fg-alt;
-	background-color: @bg-alt;
+  text-color: @on-surface;
+	background-color: @surface;
 }
