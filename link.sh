@@ -25,12 +25,12 @@ function parseArgs() {
 	stow -d ${PWD} -t ~/.config/kitty kitty
 	[ ! -d ~/.config/rofi ] && mkdir ~/.config/rofi
 	stow -d ${PWD} -t ~/.config/rofi rofi
-	[ ! -d ~/.config/gtk-2.0 ] && mkdir ~/.config/gtk-2.0
-	stow -d ${PWD} -t ~/.config/gtk-2.0 gtk-2.0
 	[ ! -d ~/.config/gtk-3.0 ] && mkdir ~/.config/gtk-3.0
 	stow -d ${PWD} -t ~/.config/gtk-3.0 gtk-3.0
 	[ ! -d ~/.config/gtk-4.0 ] && mkdir ~/.config/gtk-4.0
 	stow -d ${PWD} -t ~/.config/gtk-4.0 gtk-4.0
+	[ ! -d /etc/ly ] && mkdir /etc/ly
+	stow -d ${PWD} -t /etc/ly ly
 }
 
 parseArgs "$@"
