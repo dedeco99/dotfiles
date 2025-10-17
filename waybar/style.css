@@ -41,16 +41,12 @@ window#waybar {
  * Workspaces
  * ----------------------------------------------------- */
 
-#workspaces {
-    margin: 0px 7px 0px 0px;
-    min-width: 210px;
-}
-
 #workspaces button {
-    padding: 0px 6px;
-    margin: 3px 3px;
+		font-size: 16px;
+    padding: 0px 8px;
+    margin: 3px 3px 3px 0px;
     border-radius: 8px;
-    color: @on_surface;
+    color: @on_background;
     background-color: @background;
     transition: all 0.3s ease-in-out;
     border: 2px solid @primary;
@@ -66,7 +62,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    color: @on_surface;
+    color: @on_primary_container;
     background: @primary_container;
     border-radius: 15px;
     border-color: @primary;
@@ -85,7 +81,7 @@ tooltip {
 }
 
 tooltip label {
-    color: @on_surface;
+    color: @on_background;
 }
 
 /* -----------------------------------------------------
@@ -155,9 +151,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 }
@@ -167,9 +163,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #cpu {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px; /* not working */
-	color: @on_surface; /* not working */
+	color: @on_primary_container; /* not working */
 	border-radius: 8px;
 	padding: 0px 8px; /* not working */
 }
@@ -179,9 +175,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #memory {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 36px; /* not working */
-	color: @on_surface; /* not working */
+	color: @on_primary_container; /* not working */
 	border-radius: 8px;
 	padding: 0px 8px; /* not working */
 }
@@ -191,9 +187,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #temperature {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 }
@@ -203,9 +199,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #disk {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px; /* not working */
-	color: @on_surface; /* not working */
+	color: @on_primary_container; /* not working */
 	border-radius: 8px;
 	padding: 0px 8px; /* not working */
 }
@@ -215,9 +211,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 }
@@ -225,13 +221,13 @@ window#waybar.empty #window {
 @keyframes blink {
 	to {
 		background-color: @on_primary;
-		color: @on_surface;
+		color: @on_background;
 	}
 }
 
 #battery.warning:not(.charging) {
-	background-color: @warning;
-	color: @on_warning;
+	background-color: @error;
+	color: @on_error;
 }
 
 #battery.critical:not(.charging) {
@@ -249,18 +245,17 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #backlight {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 	transition: all 0.3s ease-out;    
 }
 
 #backlight:hover {
-	color: @on_surface;
-	background: @primary_container;
-	border-color: @primary;
+	color: @on_primary;
+	background: @primary;
 }
 
 /* -----------------------------------------------------
@@ -268,9 +263,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #wireplumber {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 	padding-right:15px;
@@ -278,14 +273,13 @@ window#waybar.empty #window {
 }
 
 #wireplumber:hover {
-	color: @on_surface;
-	background: @primary_container;
-	border-color: @primary;
+	color: @on_primary;
+	background: @primary;
 }
 
 #wireplumber.muted {
-	background-color: @on_primary_fixed;
-	color: @on_surface;
+	background-color: @primary_fixed;
+	color: @on_primary_fixed;
 }
 
 /* -----------------------------------------------------
@@ -293,34 +287,17 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 	transition: all 0.3s ease-out;    
 }
 
-#network.ethernet:hover {
-	color: @on_surface;
-	background: @primary_container;
-	border-color: @primary;
-}
-
-#network.wifi:hover {
-	color: @on_surface;
-	background: @primary_container;
-	border-color: @primary;
-}
-
-#network.ethernet {
-	background-color: @on_primary;
-	color: @on_surface;
-}
-
-#network.wifi {
-	background-color: @on_primary;
-	color: @on_surface;
+#network:hover {
+	color: @on_primary;
+	background: @primary;
 }
 
 #network.disconnected {
@@ -336,17 +313,16 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #language {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;  /* not working */
 }
 
 #language:hover {
-	color: @on_surface;
-	background: @primary_container;
-	border-color: @primary;
+	color: @on_primary;
+	background: @primary;
 }
 
 /* -----------------------------------------------------
@@ -354,9 +330,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-	background-color: @on_primary;
+	background-color: @primary_container;
 	font-size: 16px;
-	color: @on_surface;
+	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
 	margin-left: -10px;
@@ -472,7 +448,7 @@ window#waybar.empty #window {
 #custom-appmenu {
     background-color: @background;
     font-size: 16px;
-    color: @on_surface;
+    color: @on_background;
     border-radius: 8px;
     padding: 3px 10px 3px 10px;
     margin: 3px 10px 3px 0px;
@@ -481,7 +457,7 @@ window#waybar.empty #window {
 }
 
 #custom-appmenu:hover {
-    color: @on_surface;
+    color: @on_background;
     background: @primary_container;
     border-color: @primary;
 }
@@ -493,7 +469,7 @@ window#waybar.empty #window {
  #custom-nowplaying {
     background-color: @background;
     font-size: 11px;
-    color: @on_surface;
+    color: @on_background;
     border-radius: 5px 5px 5px 5px;
     padding: 0px 10px 0px 10px;
     margin: 3px 0px 3px 15px;
@@ -568,7 +544,7 @@ window#waybar.empty #window {
 #bluetooth, #bluetooth.on, #bluetooth.connected {
     background-color: @background;
     font-size: 16px;
-    color: @on_surface;
+    color: @on_background;
     border-radius: 8px;
     padding: 2px 10px 0px 10px;
     margin: 3px 10px 3px 0px;
@@ -577,7 +553,7 @@ window#waybar.empty #window {
 }
 
 #bluetooth:hover {
-    color: @on_surface;
+    color: @on_background;
     background: @primary_container;
     border-color: @primary;
 }
