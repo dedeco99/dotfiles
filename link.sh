@@ -1,10 +1,4 @@
 function parseArgs() {
-	[ ! -d ~/.config ] && mkdir ~/.config
-
-	cp ./profile ~/.zprofile
-	cp ./zsh/antigen.zsh ~/antigen.zsh
-	cp ./zsh/zshrc ~/.zshrc
-	
 	[ ! -d ~/.config/dunst ] && mkdir ~/.config/dunst
 	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
 	cp ./gtk/gtkrc-2.0 ~/.gtkrc-2.0
@@ -15,6 +9,8 @@ function parseArgs() {
 	cp ./ncmpcpp/bindings ~/.config/ncmpcpp/bindings
 	
 
+	[ ! -d ~/.config ] && mkdir ~/.config
+	stow -d ${PWD} -t ~ zsh
 	[ ! -d ~/.config/hypr ] && mkdir ~/.config/hypr
 	stow -d ${PWD} -t ~/.config/hypr hypr
 	[ ! -d ~/.config/waybar ] && mkdir ~/.config/waybar
