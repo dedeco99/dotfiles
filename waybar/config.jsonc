@@ -65,8 +65,8 @@
 		"backlight": {
 			"format": "{icon} {percent}%",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
-			"on-click": "xbacklight -inc 10",
-			"on-click-right": "xbacklight -dec 10",
+			"on-click": "brightnessctl set 10%+",
+			"on-click-right": "brightnessctl set 10%-",
 			"tooltip": false,
 			"scroll-step": 5
     },
