@@ -4,7 +4,7 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 10, // Gaps between modules (4px)
+    "spacing": 10,
     "modules-left": [
 			"hyprland/workspaces"
     ],
@@ -34,20 +34,20 @@
 			"on-click-right": "updates"
 		},
 		"cpu": {
-      "format": " {icon} {usage}% ",
+      "format": "{icon}  {usage}%",
 			"format-icons": [""]
     },
     "memory": {
-      "format": "   {}% ",
+      "format": "  {}%",
 			"tooltip-format": "{used}GiB of {avail}GiB used"
     },
     "temperature": {
 			"critical-threshold": 80,
-			"format": "{icon} {temperatureC}°C",
+			"format": "{icon}  {temperatureC}°C",
 			"format-icons": [""]
     },
 		"disk": {
-			"format": " 󱛟 {percentage_used}% ",
+			"format": "󱛟  {percentage_used}%",
 			"tooltip-format": "{free} of {total} free"
 		},
 		"battery": {
@@ -56,14 +56,14 @@
 				"warning": 50,
 				"critical": 15
 			},
-			"format": "{icon} {capacity}%",
-			"format-full": "{icon} {capacity}%",
-			"format-charging": "󱐋 {capacity}%",
-			"format-plugged": " {capacity}%",
+			"format": "{icon}  {capacity}%",
+			"format-full": "{icon}  {capacity}%",
+			"format-charging": "󱐋  {capacity}%",
+			"format-plugged": "  {capacity}%",
 			"format-icons": ["", "", "", "", ""]
     },
 		"backlight": {
-			"format": "{icon} {percent}%",
+			"format": "{icon}  {percent}%",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
 			"on-click": "brightnessctl set 10%+",
 			"on-click-right": "brightnessctl set 10%-",
@@ -71,7 +71,7 @@
 			"scroll-step": 5
     },
 		"wireplumber": {
-			"format": "{icon} {volume}% {format_source}",
+			"format": "<big>{icon}</big> {volume}% <big>{format_source}</big>",
 			"format-muted": " {format_source}",
 			"format-source": "",
 			"format-source-muted": "",
@@ -83,7 +83,7 @@
 			"on-click-right": "kitty bluetui"
     },
 		"network": {
-			"format-wifi": "{icon} {signalStrength}%",
+			"format-wifi": "{icon}  {signalStrength}%",
 			"format-ethernet": "󰈀",
 			"format-disconnected": "󰤭",
 			"format-disabled": "󰤮",
@@ -94,8 +94,7 @@
 			"on-click": "kitty wifitui"
     },
 		"hyprland/language": {
-			"format-en": " en ",
-			"format-pt": " pt ",
+			"format": "{short}",
 			"on-click": "hyprctl switchxkblayout current next"
 		},
 		"clock": {
