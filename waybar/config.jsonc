@@ -91,7 +91,7 @@
 				"default": ["󰤯", "󰤟", "󰤢", "󰤨"]
 			},
 			"tooltip-format": "{essid} {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
-			"on-click": "nmgui"
+			"on-click": "kitty wifitui"
     },
 		"hyprland/language": {
 			"format-en": " en ",
@@ -101,5 +101,8 @@
 		"clock": {
 			"tooltip-format": "{calendar}",
 			"format": "{:%d-%m-%Y %H:%M}"
-    }
+    },
+		"tray": {
+			"spacing": 8
+		}
 }
