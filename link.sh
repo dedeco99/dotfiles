@@ -1,6 +1,5 @@
 function parseArgs() {
-	[ ! -d ~/.config/dunst ] && mkdir ~/.config/dunst
-	cp ./dunst/dunstrc ~/.config/dunst/dunstrc
+	
 	cp ./gtk/gtkrc-2.0 ~/.gtkrc-2.0
 	[ ! -d ~/.config/mpd ] && mkdir ~/.config/mpd
 	cp ./mpd/mpd.conf ~/.config/mpd/mpd.conf
@@ -27,6 +26,8 @@ function parseArgs() {
 	stow -d ${PWD} -t ~/.config/gtk-4.0 gtk-4.0
 	[ ! -d /etc/ly ] && mkdir /etc/ly
 	stow -d ${PWD} -t /etc/ly ly
+	[ ! -d ~/.config/dunst ] && mkdir ~/.config/dunst
+	stow -d ${PWD} -t ~/.config/dunst dunst
 }
 
 parseArgs "$@"
