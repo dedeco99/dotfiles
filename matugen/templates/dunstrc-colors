@@ -51,24 +51,24 @@ mouse_left_click = close_current
 mouse_middle_click = do_action, close_current
 mouse_right_click = close_all
 separator_color = frame
-frame_color = "#80d5d4"
-highlight = "#80d5d4"
-separator_color= "#80d5d4"
+frame_color = "{{colors.primary.default.hex}}"
+highlight = "{{colors.primary.default.hex}}"
+separator_color= "{{colors.primary.default.hex}}"
 [experimental]
 per_monitor_dpi = false
 [urgency_low]
 timeout = 3
-background = "#004f4f"
-foreground = "#9cf1f0"
-highlight = "#004f4f"
+background = "{{colors.primary_container.default.hex}}"
+foreground = "{{colors.on_primary_container.default.hex}}"
+highlight = "{{colors.primary_container.default.hex}}"
 [urgency_normal]
 timeout = 6
-background = "#004f4f"
-foreground = "#9cf1f0"
-highlight = "#004f4f"
+background = "{{colors.primary_container.default.hex}}"
+foreground = "{{colors.on_primary_container.default.hex}}"
+highlight = "{{colors.primary_container.default.hex}}"
 [urgency_critical]
 timeout = 0
-background = "#004f4f"
-foreground = "#9cf1f0"
-highlight = "#ffb4ab"
+background = "{{colors.primary_container.default.hex}}"
+foreground = "{{colors.on_primary_container.default.hex}}"
+highlight = "{{colors.error.default.hex}}"
 
