@@ -31,6 +31,8 @@ function parseArgs() {
 	[ ! -d ~/.config/flameshot ] && mkdir ~/.config/flameshot
 	stow -d ${PWD} -t ~/.config/flameshot flameshot
 	[ ! -d ~/.config/yazi ] && mkdir ~/.config/yazi
+	[ ! -d ~/.config/mimi ] && mkdir ~/.config/mimi
+	stow -d ${PWD} -t ~/.config/mimi mimi
 }
 
 parseArgs "$@"

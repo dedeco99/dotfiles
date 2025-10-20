@@ -1,5 +1,5 @@
 export PATH="$PATH:/home/dedeco99/Programming/Projects/dotfiles/scripts:/opt/flutter/bin:/home/dedeco99/.local/bin"
-export EDITOR="nano"
+export EDITOR="code"
 export TERMINAL="kitty"
 export BROWSER="brave"
 export QT_QPA_PLATFORMTHEME="qt5ct"
