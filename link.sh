@@ -30,6 +30,7 @@ function parseArgs() {
 	stow -d ${PWD} -t ~/.config/dunst dunst
 	[ ! -d ~/.config/flameshot ] && mkdir ~/.config/flameshot
 	stow -d ${PWD} -t ~/.config/flameshot flameshot
+	[ ! -d ~/.config/yazi ] && mkdir ~/.config/yazi
 }
 
 parseArgs "$@"
