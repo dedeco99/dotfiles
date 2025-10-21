@@ -165,8 +165,8 @@ tooltip label {
 
 @keyframes blink {
 	to {
-		background-color: @on_primary;
-		color: @on_background;
+		background-color: @primary_container;
+		color: @on_primary_container;
 	}
 }
 
