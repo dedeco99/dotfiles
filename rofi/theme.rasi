@@ -2,13 +2,19 @@
 @theme "~/.config/rofi/colors.rasi"
 
 configuration {
-  drun {
-    display-name: "";
+	drun {
+    display-name: "󰌧";
   }
 
 	calc {
-    display-name: "🖩";
+    display-name: "";
   }
+
+	emoji {
+		display-name: "󰞅";
+	}
+
+	font: "SauceCodePro Nerd Font Mono 12";
 }
 
 * {
@@ -24,8 +30,9 @@ configuration {
 window {
   transparency: "real";
   width: 500px;
-	border: 1px;
-	border-color: #808080;
+	border: 2px;
+	border-color: @primary;
+	border-radius: 8px;
 }
 
 mainbox {
@@ -34,9 +41,10 @@ mainbox {
 }
 
 inputbar {
-  background-color: @background;
+  background-color: @primary-container;
   children: [prompt, entry];
-	
+	border-radius: 8px;
+	margin: 10px;
 }
 
 entry {
@@ -62,20 +70,23 @@ listview {
 
 element {
 	children: [element-icon, element-text];
+	margin: 0px 10px;
 }
 
 element-icon {
 	margin: 3px 0px 0px 0px;
   padding: 10px 10px;
   size: 20px;
+	border-radius: 8px 0px 0px 8px;
 }
 
 element-text {
 	margin: 3px 0px 0px 0px;
   padding: 10px;
+	border-radius: 0px 8px 8px 0px;
 }
 
 element-icon selected, element-text selected {
-  text-color: @on-surface;
-	background-color: @surface;
+  text-color: @on-primary-container;
+	background-color: @primary-container;
 }

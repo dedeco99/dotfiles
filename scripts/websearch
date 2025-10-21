@@ -1,6 +1,6 @@
 #!/bin/bash
 
-selected="$(rofi -dmenu -l 0 -p "Search")";
+selected="$(rofi -dmenu -show search -l 0 -p "")";
 
 echo $selected;
 
