@@ -2,6 +2,14 @@
 
 mode=${1:-multiple};
 
-echo "MONITOR_MODE=$mode" > ~/.config/bspwm/monitorMode
+echo $mode;
 
-bspc wm -r && pkill -USR1 -x sxhkd
+if [ $mode == "multiple" ]; then
+	sed -i "4s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	sed -i "5s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	sed -i "8s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+else
+	sed -i "4s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	sed -i "5s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	sed -i "8s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+fi
