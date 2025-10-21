@@ -24,7 +24,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 antigen apply
 
 # Aliases
-alias update="yay -Syu && polybar-msg action \"#updates.hook.0\""
+alias update="yay -Syu"
 alias install="yay -S"
 alias uninstall="yay -Rsn"
 alias search="yay -Ss"
