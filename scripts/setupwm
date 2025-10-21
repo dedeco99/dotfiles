@@ -8,7 +8,7 @@ if [ $mode == "multiple" ]; then
 	sed -i "4s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "5s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "8s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
-else if [ $mode == "tv" ]; then
+elif [ $mode == "tv" ]; then
 	sed -i "4s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "5s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "8s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
