@@ -9,6 +9,7 @@
 			"hyprland/workspaces"
     ],
     "modules-right": [
+			"idle_inhibitor",
 			"custom/updates",
 			"cpu",
 			"memory",
@@ -23,6 +24,13 @@
 			"clock",
 			"tray"
     ],
+		"idle_inhibitor": {
+			"format": "{icon}",
+			"format-icons": {
+				"activated": "",
+				"deactivated": ""
+			}
+		},
 		"custom/updates": {
 			"interval": 1800,
 			"exec": "updates",

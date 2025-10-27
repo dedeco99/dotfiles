@@ -92,6 +92,23 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
+ * Idle Inhibitor
+ * ----------------------------------------------------- */
+
+#idle_inhibitor {
+	background-color: @primary_container;
+	font-size: 16px;
+	color: @on_primary_container;
+	border-radius: 8px;
+	padding: 0px 8px;
+}
+
+#idle_inhibitor:hover {
+	color: @on_primary;
+	background: @primary;
+}
+
+/* -----------------------------------------------------
  * Custom Updates
  * ----------------------------------------------------- */
 
