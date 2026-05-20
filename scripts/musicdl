@@ -14,7 +14,7 @@ yt-dlp -x --audio-format best --audio-quality 0 https://www.youtube.com/playlist
 
 beet import -s .
 
-rclone -P sync ~/Music/Music dedeco99-Pixel:Download/Music --disable PartialUploads --ftp-concurrency 1
+#rclone -P sync ~/Music/Music dedeco99-Pixel:Download/Music --disable PartialUploads --ftp-concurrency 1
 
 notify-send "MusicDL has finished"
 

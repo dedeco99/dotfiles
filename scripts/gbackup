@@ -11,11 +11,11 @@ echo "-----"
 echo "Music"
 rclone -P sync ~/Music googleDrive:Music
 echo "-----"
-echo "Pictures"
-rclone -P sync ~/Pictures --exclude .images/ googleDrive:Pictures
-echo "-----"
 echo "Programming"
 rclone -P sync ~/Programming --exclude Projects/ googleDrive:Programming
+echo "-----"
+echo "Pictures"
+rclone -P sync ~/Pictures --exclude .images/ googleDrive:Pictures
 echo "-----"
 echo "Videos"
 rclone -P sync ~/Videos googleDrive:Videos
