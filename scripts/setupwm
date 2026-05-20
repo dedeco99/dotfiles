@@ -4,14 +4,21 @@ mode=${1:-multiple};
 
 echo $mode;
 
+WAYBAR_CONFIG=~/Programming/Projects/dotfiles/waybar/config.jsonc
+WAYBAR_CONFIG_DUAL=~/Programming/Projects/dotfiles/waybar/config-dual.jsonc
+
 if [ $mode == "multiple" ]; then
 	sed -i "4s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "5s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "8s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	killall waybar
+	waybar -c $WAYBAR_CONFIG_DUAL &
 elif [ $mode == "tv" ]; then
 	sed -i "8s/1/2/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 else
 	sed -i "4s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "5s/^#*/#/" ~/Programming/Projects/dotfiles/hypr/monitors.conf
 	sed -i "8s/#//" ~/Programming/Projects/dotfiles/hypr/monitors.conf
+	killall waybar
+	waybar -c $WAYBAR_CONFIG &
 fi

@@ -44,20 +44,24 @@
 		},
 		"cpu": {
       "format": "{icon}  {usage}%",
-			"format-icons": [""]
+			"format-icons": [""],
+			"on-click": "kitty btop"
     },
     "memory": {
       "format": "  {}%",
-			"tooltip-format": "{used}GiB of {avail}GiB used"
+			"tooltip-format": "{used}GiB of {avail}GiB used",
+			"on-click": "kitty btop"
     },
     "temperature": {
 			"critical-threshold": 80,
 			"format": "{icon}  {temperatureC}°C",
-			"format-icons": [""]
+			"format-icons": [""],
+			"on-click": "kitty btop"
     },
 		"disk": {
 			"format": "󱛟  {percentage_used}%",
-			"tooltip-format": "{free} of {total} free"
+			"tooltip-format": "{free} of {total} free",
+			"on-click": "kitty btop"
 		},
 		"battery": {
 			"bat": "BAT0",

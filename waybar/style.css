@@ -120,6 +120,11 @@ tooltip label {
 	padding: 0px 8px;
 }
 
+#custom-updates:hover {
+	color: @on_primary;
+	background: @primary;
+}
+
 /* -----------------------------------------------------
  * CPU
  * ----------------------------------------------------- */
@@ -130,6 +135,11 @@ tooltip label {
 	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
+}
+
+#cpu:hover {
+	color: @on_primary;
+	background: @primary;
 }
 
 /* -----------------------------------------------------
@@ -144,6 +154,11 @@ tooltip label {
 	padding: 0px 8px;
 }
 
+#memory:hover {
+	color: @on_primary;
+	background: @primary;
+}
+
 /* -----------------------------------------------------
  * Temperature
  * ----------------------------------------------------- */
@@ -156,6 +171,11 @@ tooltip label {
 	padding: 0px 8px;
 }
 
+#temperature:hover {
+	color: @on_primary;
+	background: @primary;
+}
+
 /* -----------------------------------------------------
  * Disk
  * ----------------------------------------------------- */
@@ -166,6 +186,11 @@ tooltip label {
 	color: @on_primary_container;
 	border-radius: 8px;
 	padding: 0px 8px;
+}
+
+#disk:hover {
+	color: @on_primary;
+	background: @primary;
 }
 
 /* -----------------------------------------------------

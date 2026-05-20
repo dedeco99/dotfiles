@@ -1,0 +1,220 @@
+// -*- mode: jsonc -*-
+[
+    {
+        "output": "HDMI-A-2",
+        "position": "bottom",
+        "spacing": 10,
+        "modules-left": [
+            "hyprland/workspaces"
+        ],
+        "modules-right": [
+            "idle_inhibitor",
+            "custom/updates",
+            "cpu",
+            "memory",
+            "temperature",
+            "disk",
+            "battery",
+            "battery#bat2",
+            "backlight",
+            "wireplumber",
+            "network",
+            "hyprland/language",
+            "clock",
+            "tray"
+        ],
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        "custom/updates": {
+            "interval": 1800,
+            "exec": "updates",
+            "format": "{icon}  {text}",
+            "format-icons": {
+                "default": ""
+            },
+            "tooltip": false,
+            "on-click": "kitty yay -Syu",
+            "on-click-right": "updates"
+        },
+        "cpu": {
+            "format": "{icon}  {usage}%",
+            "format-icons": [
+                ""
+            ],
+            "on-click": "kitty btop"
+        },
+        "memory": {
+            "format": "  {}%",
+            "tooltip-format": "{used}GiB of {avail}GiB used",
+            "on-click": "kitty btop"
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "{icon}  {temperatureC}°C",
+            "format-icons": [
+                ""
+            ],
+            "on-click": "kitty btop"
+        },
+        "disk": {
+            "format": "󱛟  {percentage_used}%",
+            "tooltip-format": "{free} of {total} free",
+            "on-click": "kitty btop"
+        },
+        "battery": {
+            "bat": "BAT0",
+            "states": {
+                "good": 95,
+                "warning": 50,
+                "critical": 15
+            },
+            "format": "{icon}  {capacity}%",
+            "format-full": "{icon}  {capacity}%",
+            "format-charging": "󱐋  {capacity}%",
+            "format-plugged": "  {capacity}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "battery#bat2": {
+            "bat": "BAT1",
+            "states": {
+                "good": 95,
+                "warning": 50,
+                "critical": 15
+            },
+            "format": "{icon}  {capacity}%",
+            "format-full": "{icon}  {capacity}%",
+            "format-charging": "󱐋  {capacity}%",
+            "format-plugged": "  {capacity}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "backlight": {
+            "format": "{icon}  {percent}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "on-click": "brightnessctl set 10%+",
+            "on-click-right": "brightnessctl set 10%-",
+            "tooltip": false,
+            "scroll-step": 5
+        },
+        "wireplumber": {
+            "format": "<big>{icon}</big> {volume}% <big>{format_source}</big>",
+            "format-muted": " {format_source}",
+            "format-source": "",
+            "format-source-muted": "",
+            "format-icons": {
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "scroll-step": 5,
+            "on-click": "kitty wiremix",
+            "on-click-right": "kitty bluetui"
+        },
+        "network": {
+            "format-wifi": "{icon}  {signalStrength}%",
+            "format-ethernet": "󰈀",
+            "format-disconnected": "󰤭",
+            "format-disabled": "󰤮",
+            "format-icons": {
+                "default": [
+                    "󰤯",
+                    "󰤟",
+                    "󰤢",
+                    "󰤨"
+                ]
+            },
+            "tooltip-format": "{essid} {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+            "on-click": "kitty wifitui"
+        },
+        "hyprland/language": {
+            "format": "{short}",
+            "on-click": "hyprctl switchxkblayout current next"
+        },
+        "clock": {
+            "tooltip-format": "{calendar}",
+            "format": "{:%d-%m-%Y %H:%M}"
+        },
+        "tray": {
+            "spacing": 8
+        }
+    },
+    {
+        "output": "eDP-1",
+        "position": "bottom",
+        "spacing": 10,
+        "modules-left": [
+            "hyprland/workspaces"
+        ],
+        "modules-right": [
+            "backlight",
+            "network",
+            "clock"
+        ],
+        "backlight": {
+            "format": "{icon}  {percent}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "on-click": "brightnessctl set 10%+",
+            "on-click-right": "brightnessctl set 10%-",
+            "tooltip": false,
+            "scroll-step": 5
+        },
+        "network": {
+            "format-wifi": "{icon}  {signalStrength}%",
+            "format-ethernet": "󰈀",
+            "format-disconnected": "󰤭",
+            "format-disabled": "󰤮",
+            "format-icons": {
+                "default": [
+                    "󰤯",
+                    "󰤟",
+                    "󰤢",
+                    "󰤨"
+                ]
+            },
+            "tooltip-format": "{essid} {ipaddr}\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+            "on-click": "kitty wifitui"
+        },
+        "clock": {
+            "tooltip-format": "{calendar}",
+            "format": "{:%d-%m-%Y %H:%M}"
+        }
+    }
+]
