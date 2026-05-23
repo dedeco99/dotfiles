@@ -4,6 +4,11 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 import sys
+import subprocess
+import time
+
+print("Copying playlists from Pixel...")
+subprocess.run(["rclone", "copy", "dedeco99-Pixel:Download/Playlists", "/home/dedeco99/Music/Playlists"], check=True)
 
 PLEX_URL = "http://127.0.0.1:32400"
 TOKEN = "JXgaKjC65Wqj44_JFpfz"
@@ -47,31 +52,50 @@ with open(M3U_FILE, "r", encoding="utf-8") as f:
             songs.append(line)
 print(f"Found {len(songs)} songs in playlist")
 
+def load_plex_tracks():
+    filename_map = {}
+    page_size = 500
+    offset = 0
+    while True:
+        tracks_xml = plex_get(f"/library/sections/{SECTION_ID}/all?type=10&X-Plex-Container-Start={offset}&X-Plex-Container-Size={page_size}")
+        tree = ET.fromstring(tracks_xml)
+        tracks = tree.findall(".//Track")
+        if not tracks:
+            break
+        for track in tracks:
+            for part in track.findall(".//Part"):
+                filepath = part.attrib.get("file", "")
+                filename = filepath.split("/")[-1].lower()
+                rating_key = track.attrib.get("ratingKey")
+                if filename and rating_key:
+                    filename_map[filename] = rating_key
+                    filename_map[filepath.lower()] = rating_key
+        offset += len(tracks)
+        if len(tracks) < page_size:
+            break
+    return filename_map
+
 # Step 3: Get all tracks from Plex and build a filename->ratingKey map
 print("Loading all tracks from Plex (this may take a moment)...")
-filename_map = {}
-page_size = 500
-offset = 0
-while True:
-    tracks_xml = plex_get(f"/library/sections/{SECTION_ID}/all?type=10&X-Plex-Container-Start={offset}&X-Plex-Container-Size={page_size}")
-    tree = ET.fromstring(tracks_xml)
-    tracks = tree.findall(".//Track")
-    if not tracks:
-        break
-    for track in tracks:
-        for part in track.findall(".//Part"):
-            filepath = part.attrib.get("file", "")
-            filename = filepath.split("/")[-1].lower()
-            rating_key = track.attrib.get("ratingKey")
-            if filename and rating_key:
-                filename_map[filename] = rating_key
-                filename_map[filepath.lower()] = rating_key
-    offset += len(tracks)
-    print(f"  Loaded {offset} tracks so far...")
-    if len(tracks) < page_size:
+filename_map = load_plex_tracks()
+print(f"Loaded {len(filename_map) // 2} tracks from Plex")
+
+# Check if any playlist song is missing from Plex library
+missing_any = False
+for song_path in songs:
+    filename = song_path.split("/")[-1].lower()
+    song_path_lower = song_path.lower()
+    if filename not in filename_map and song_path_lower not in filename_map:
+        missing_any = True
         break
 
-print(f"Loaded {len(filename_map) // 2} tracks from Plex")
+if missing_any:
+    print("Some songs are missing from the Plex library. Triggering scan...")
+    plex_get(f"/library/sections/{SECTION_ID}/refresh")
+    time.sleep(8)
+    print("Reloading tracks from Plex after scan...")
+    filename_map = load_plex_tracks()
+    print(f"Loaded {len(filename_map) // 2} tracks from Plex")
 
 # Step 4: Match songs from playlist to Plex tracks
 found_keys = []
